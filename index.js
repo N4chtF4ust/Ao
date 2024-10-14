@@ -1,29 +1,7 @@
 
 //For scrolling
 //---------------------------------------------
-var Homepage = document.querySelector("#Homepage");
-var homepage = document.querySelector(".homepage");
- 
-Homepage.addEventListener("click", function() {
-homepage.scrollIntoView({ behavior: 'smooth' });
-});
 
-
-var menuList = document.querySelector("#Menu_list");
-var foodList = document.querySelector(".foodlist");
- 
-menuList.addEventListener("click", function() {
-foodList.scrollIntoView({ behavior: 'smooth' });
-});
-
-
-
-var Loc_ = document.querySelector("#Location");
-var loc_ = document.querySelector(".location");
- 
-Loc_.addEventListener("click", function() {
-    loc_.scrollIntoView({ behavior: 'smooth' });
-});
 //------------------------------------------------
 
 //for footer
@@ -48,24 +26,6 @@ gmail.addEventListener("click", function() {
 
 //--------------------------------------------------
 
-//button for square icon  
-//---------------------------------------------------
-let container_for_square_icon = document.querySelector(".container-for-square-icon");
-let nav_header = document.querySelector(".nav_header");
-let square_icon = document.querySelector(".square-icon");
-let rec_1 = document.querySelector("#rec-1");
-let rec_3 = document.querySelector("#rec-3");
-let rec_2 = document.querySelector("#rec-2");
-
-container_for_square_icon.addEventListener("click", ()=> {
-  container_for_square_icon.classList.toggle("click");
-  nav_header.classList.toggle("click");
-  square_icon.classList.toggle("click");
-  rec_1.classList.toggle("click");
-  rec_3.classList.toggle("click");
-  rec_2.classList.toggle("click");
-});
-//---------------------------------------------------
 
 
 //-----------------------------------
@@ -112,17 +72,10 @@ function eye(pass1,eye) {
     
   }
 }
-
+//togglesignin and signup
 function toggle_signup(a,b){
   a.style.right=-50+'%';
   b.style.right=30+'%';
-
 }
-
-
-
-
-
-
 
 //------------------------------------------
