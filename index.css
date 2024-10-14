@@ -5,6 +5,7 @@
   --sign_in_background_color--: rgb(153, 99, 99);
   --focus--:white;
   --signin_signup_hover--:white;
+  --submit-active--:white;
 }
 ::-ms-reveal {
   display: none;
@@ -386,6 +387,12 @@ form input[type="tel"]{
   text-transform: uppercase;
   font-weight: bolder;
   cursor: pointer;
+}
+
+form input[type="submit"]:active{
+  background-color: var(--submit-active--);
+  border-color: var(--submit-active--);
+  outline-color: var(--submit-active--);
 }
 
  form label{
