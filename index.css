@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 :root{
-  --sign_in_background_color--: rgb(153, 99, 99);
+  --sign_in_background_color--: #a85d68;
   --focus--:white;
   --signin_signup_hover--:white;
   --submit-active--:white;
@@ -130,6 +130,7 @@ body{
   justify-content: center;
   align-items: center;
   display: flex;
+  position: relative;
 }
 
 .welcome{
@@ -287,27 +288,47 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  position: absolute;
-  bottom: 5%;
-  height: 10%;
-  gap: 10%;
-}
-.contacts img{
-  width: 8%;
-  border-radius: 10px;
-  padding: 1%;
-  position:relative;
+ 
+  display: flex;
+  
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+ 
+ 
+  position: absolute;
+  bottom: 35%;
+  left: 15%;
+  width: 25%;
+  height: 5%;
+  gap: 10%;
+  z-index: 1;
+
+}
+#phone,#fb,#gmail{
+  width: 20%;
+  height: 100%;
+ 
+  display: grid;
+  place-items: center;
+
+  background-color: #a70000;
+
+  border-radius: 10px;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.63);
-  border: 1px solid white;
-  transition: .5s ease-in-out;
+  transition: .3s ease-in-out;
+ 
+ 
 }
 
-.contacts img:hover{
-  background:#da1b3d;
+#phone:hover,#fb:hover,#gmail:hover{
+  background-color: black;
+
+ 
+}
+
+.contacts svg{
+  color: white;
+
 }
 
 #sign_in,#sign_up{
