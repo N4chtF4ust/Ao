@@ -4,6 +4,7 @@
 :root{
   --sign_in_background_color--: rgb(153, 99, 99);
   --focus--:white;
+  --signin_signup_hover--:white;
 }
 ::-ms-reveal {
   display: none;
@@ -384,6 +385,7 @@ form input[type="tel"]{
   font-family: "Freeman", sans-serif; 
   text-transform: uppercase;
   font-weight: bolder;
+  cursor: pointer;
 }
 
  form label{
@@ -424,18 +426,28 @@ input::placeholder{
 
 input:focus,
 input:focus ~ #logo_user,
-input:focus ~ #logo_pass
+input:focus ~ #logo_pass{
+ color: var(--focus--);
+}
 
-{
-  color: var(--focus--);
+#username-wrapper:focus-within,
+#password-wrapper:focus-within,
+#signup-username-wrapper:focus-within,
+#signup-contact-wrapper:focus-within,
+#signup-location-wrapper:focus-within,
+#signup-password-wrapper:focus-within,
+#signup-re-enter-password-wrapper:focus-within  {
+  border-color: var(--focus--);
+}
 
+#full-name-wrapper input:focus{
+  outline-color: var(--focus--);
 }
 
 input:focus ~ #eye img{
   filter: contrast(0);
   filter: invert(100%) brightness(200%);
 }
-
 
 #eye{
   width: 10%;
@@ -500,6 +512,18 @@ input:focus ~ #eye img{
 #sign_up,#sign_in{
   position: absolute;
   transition: .3s ease-in-out;
+  
+}
+
+#sign_up h4,#sign_in h4{
+ cursor: pointer;
+
+}
+
+#sign_up h4:hover,#sign_in h4:hover{
+  color: var(--signin_signup_hover--);
+text-shadow: 2px 2px black;
+ 
 }
 
 
