@@ -1,33 +1,6 @@
-
-//For scrolling
-//---------------------------------------------
-
-//------------------------------------------------
-
-//for footer
-
-var phone = document.querySelector("#phone");
-phone.addEventListener("click", function() {
-
-  window.location.href = "tel:+639682487864"; 
+window.addEventListener('orientationchange',()=>{
+location.reload();
 });
-
-var fb = document.querySelector("#fb");
-fb.addEventListener("click", function() {
-
-  window.location.href = "https://www.facebook.com/p/AO-Japanese-Cuisine-Restaurant-Catering-100086916185458/"; 
-});
-
-var gmail = document.querySelector("#gmail");
-gmail.addEventListener("click", function() {
-
-  window.location.href = "mailto:aojapanesecuisine.ph@gmail.com"; 
-});
-
-//--------------------------------------------------
-
-
-
 //-----------------------------------
 //scrolling effect animation
 
@@ -49,33 +22,37 @@ window.addEventListener('scroll', () => {
   cloud1.style.left = value * -3+ 'px';
   cloud2.style.marginLeft = value * -3+ 'px';
   cloud3.style.right = value * -3+ 'px';
-  obj1.style.marginBottom = value * -.6+ 'px';
-  obj2.style.marginBottom = value * -.8+ 'px';
-  obj3.style.marginBottom = value * -.5+ 'px';
-  obj4.style.marginBottom = value * -.6+ 'px';
-  mountain.style.marginBottom = value * -.3+ 'px';
+  obj1.style.marginBottom = value * -.2+ 'px';
+  obj2.style.marginBottom = value * -.2+ 'px';
+  obj3.style.marginBottom = value * -.2+ 'px';
+  obj4.style.marginBottom = value * -.2+ 'px';
+  mountain.style.marginBottom = value * -.2+ 'px';
 
 });
 
 //eye switching
 
-function eye(pass1,eye) {
+function eye(pass,eye) {
   
 
-  if (pass1.type === "password") {
-    pass1.type = "text";
-    eye.src = "homepage_photo/eye-slash-fill.png";
+  if (pass.type === "password") {
+    pass.type = "text";
+    eye.src = "homepage_photo/eye-fill-slash.svg";
 
   } else {
-    pass1.type = "password";
-    eye.src = "homepage_photo/eye-fill.png";
+    pass.type = "password";
+    eye.src = "homepage_photo/eye-fill.svg";
     
   }
 }
 //togglesignin and signup
 function toggle_signup(a,b){
-  a.style.right=-50+'%';
-  b.style.right=30+'%';
+  a.style.right='-300%';
+  a.style.transform = 'translateX(300%)';
+  b.style.left = '50%';
+  b.style.transform = 'translateX(-50%)'; 
+
+  
 }
 
 //------------------------------------------

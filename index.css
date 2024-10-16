@@ -1,23 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Freeman&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 :root{
-  --sign_in_background_color--: #a85d68;
-  --focus--:white;
-  --signin_signup_hover--:white;
-  --submit-active--:white;
+  --sign_in_background_color--: #e5e1da9c;
+  --focus--:#A80038;
+  --focus-eye-svg--:brightness(0) saturate(100%) invert(6%) sepia(96%) saturate(7397%) hue-rotate(332deg) brightness(92%) contrast(106%);
+  --signin_signup_active--:#A80038;
+  --submit-active--:#A80038;
+  --submit-text-color-active--:white;
+  --submit-bg-color--:black;
+  --submit-button-text:white;
+  --input-wrapper--:white;
+  --form-input-border-radius:10px;
+  --form-signup-input-border-radius:5px;
 }
 ::-ms-reveal {
   display: none;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0px 1000px var(--sign_in_background_color--) inset;
 
-
-}
 
 body{
   font-family: "Freeman", sans-serif; 
@@ -34,7 +37,11 @@ body{
   width: 100vw;
   height: 100vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: row ;
+
+
 }
 
 .bg {
@@ -43,7 +50,7 @@ body{
   position: absolute;
   z-index: -1;
   overflow: hidden;
-  background-color: #f9b69d;
+  background-color: #2d202e;
 }
 
 .bg img {
@@ -54,7 +61,7 @@ body{
   position: absolute;
   bottom: 0;
   height: 11vh;
-  width: 100vw;
+  width: 100%;
   z-index: 3;
 }
 
@@ -90,6 +97,7 @@ body{
   position: absolute;
   width: 100vw;
   z-index: -1;
+  transform: scaleX(-1);
 }
 
 #cloud1{
@@ -113,6 +121,10 @@ body{
   z-index: -2;
   top: 15vh;
   right: 0;
+}
+
+#cloud1,#cloud2,#cloud3{
+  opacity: 75%;
 }
 
 #moon{
@@ -144,17 +156,18 @@ body{
   margin: 0;
   line-height: 30%;
   z-index: 1;
-  text-shadow:  2px 2px 1px white;  
+  text-shadow:  2px 2px 1px rgb(0, 0, 0);  
+  font-family: "Permanent Marker", cursive;
  
 }
 
 .welcome h1{
-  color: #a70000 ;
+  color: #A80038 ;
 
 }
 
-.welcome h4,.welcome h6{
-  color: black;  
+.welcome h2,.welcome h5{
+  color: white;  
  
 }
 
@@ -162,66 +175,20 @@ body{
 .right_container{
   display: flex;
   overflow: hidden;
-  width: 50vw;
+  width: 100vw;
   height: 100vh;
   align-items: center;
   justify-content: center;
   position: relative;
   text-align: center;
+
   
-}
-
-.contacts{
-  display: flex;
-  align-items: center;
-  justify-content: center;
- 
-  display: flex;
-  
-  align-items: center;
-  justify-content: space-between;
- 
- 
-  position: absolute;
-  bottom: 35%;
-  left: 15%;
-  width: 25%;
-  height: 5%;
-  gap: 10%;
-  z-index: 1;
-
-}
-#phone,#fb,#gmail{
-  width: 20%;
-  height: 100%;
- 
-  display: grid;
-  place-items: center;
-
-  background-color: #a70000;
-
-  border-radius: 10px;
-  cursor: pointer;
-  transition: .3s ease-in-out;
- 
- 
-}
-
-#phone:hover,#fb:hover,#gmail:hover{
-  background-color: black;
-
- 
-}
-
-.contacts svg{
-  color: white;
-
 }
 
 #sign_in,#sign_up{
   background-color: var(--sign_in_background_color--);
-  width: 40%;
-  height: 50%;
+  width: 30%;
+  height: 75%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -229,28 +196,21 @@ body{
   position: relative;
   border-radius: 15px;
   text-transform: uppercase;
-  
+  backdrop-filter: blur(5px);
+
 }
-
-
 
 #sign_up form{
- 
-  height: 60%;
-
-  
+  height: 60%;  
 }
 
-
-
- h4{
+h4{
   position: absolute;
   right: 10%;
   bottom: 1%;
 }
 
 form{
- 
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -262,6 +222,28 @@ form{
   
 }
 
+form svg{
+  width: 70%;
+  height: 70%;
+}
+
+#sign_up form svg{
+  width: 60%;
+  height:60%;
+ 
+ 
+}
+
+#sign_up form #signup-location-wrapper #logo_user svg,#sign_up form #signup-contact-wrapper #logo_user svg{
+  width: 50%;
+  height:50%; 
+ 
+ 
+}
+
+
+
+
  form input[type="text"],
  form input[type="password"],
  form input[type="tel"]{
@@ -270,7 +252,9 @@ form{
   box-sizing: border-box;
   outline: none;
   border: none;
-  background-color:var(--sign_in_background_color--);
+  background-color:white;
+  border-radius: var(--form-input-border-radius);
+ 
 }
 form input[type="text"]{
   width: 85%;
@@ -282,25 +266,28 @@ form input[type="text"]{
 
 form input[type="tel"]{
   width: 85%;
+
 }
 
  form input[type="submit"]{
   width: 100%;
   height: 20%;
   outline: 2px solid black;
-  background-color: black;
+  background-color:var(--submit-bg-color--);
   border: 2px solid black;
-  color: var(--sign_in_background_color--);
+  color: var(--submit-button-text);
   font-family: "Freeman", sans-serif; 
   text-transform: uppercase;
   font-weight: bolder;
   cursor: pointer;
+  border-radius: var(--form-input-border-radius);
 }
 
 form input[type="submit"]:active{
   background-color: var(--submit-active--);
   border-color: var(--submit-active--);
   outline-color: var(--submit-active--);
+  color: var(--submit-text-color-active--);
 }
 
  form label{
@@ -316,9 +303,12 @@ form input[type="submit"]:active{
   align-items: center;
   position: relative;
   border: 2px solid black;
+  background-color: var(--input-wrapper--);
+  border-radius: var(--form-input-border-radius);
 }
 #logo_user{
   width: 15%;
+
   position: relative;
   display: grid;
   place-items: center;
@@ -360,8 +350,15 @@ input:focus ~ #logo_pass{
 }
 
 input:focus ~ #eye img{
-  filter: contrast(0);
-  filter: invert(100%) brightness(200%);
+
+  filter: var(--focus-eye-svg--);
+
+}
+
+input:focus ~ #eye svg{
+ color: red;
+
+
 }
 
 #eye{
@@ -370,6 +367,12 @@ input:focus ~ #eye img{
   position: relative;
   display: grid;
   place-items: center;
+
+}
+
+#eye img { 
+  width: 50%;
+
 }
 
 #password-wrapper img{
@@ -390,6 +393,7 @@ input:focus ~ #eye img{
 
  #sign_up form input[type="submit"] {
   height: 10%;
+  
  }
 
  #full-name-wrapper,#signup-username-wrapper,#signup-contact-wrapper,#signup-location-wrapper,#signup-password-wrapper,#signup-re-enter-password-wrapper{
@@ -402,16 +406,23 @@ input:focus ~ #eye img{
   align-items: center;
   position: relative;
 
-
  }
 
  #signup-username-wrapper,#signup-contact-wrapper,#signup-location-wrapper,#signup-password-wrapper,#signup-re-enter-password-wrapper{
   border: 2px solid black;
+  background-color: var(--input-wrapper--);
+  border-radius: var(--form-signup-input-border-radius);
   
  }
 
+ #sign_up form input[type="submit"]{
+  border-radius: var(--form-signup-input-border-radius);
+
+ }
+
  #full-name-wrapper input{
-  outline: 2px solid black; ;
+  outline: 2px solid black; 
+  border-radius: var(--form-signup-input-border-radius);
  }
 
 
@@ -421,7 +432,15 @@ input:focus ~ #eye img{
  }
 
  #sign_up{
-  right: -50%;
+  right: -300%;
+  transform: translateX(300%);
+}
+
+#sign_in { 
+  
+  left: 50%;
+  transform: translateX(-50%);
+  
 }
 
 #sign_up,#sign_in{
@@ -435,9 +454,9 @@ input:focus ~ #eye img{
 
 }
 
-#sign_up h4:hover,#sign_in h4:hover{
-  color: var(--signin_signup_hover--);
-text-shadow: 2px 2px black;
+#sign_up h4:active,#sign_in h4:active{
+  color: var(--signin_signup_active--);
+
  
 }
 
@@ -448,87 +467,15 @@ text-shadow: 2px 2px black;
 /*---------------------*/
 /*Foodlist*/
 
-.foodlist{
-  width: 100vw;
-  height: 100vh;
-}
+
+
 
 /*---------------------*/
-/*---------------------*/
-.location{
-  width: 100vw;
-  height: 100vh;
-  background-color: #402e41;  
-}
 
-.flex-header2{
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  width: 34.181vw;
-  height: 4vh;
-  justify-content: center;
-  align-items: center;
-  gap: 3%;
-  padding:1%;
-}
-
-.menu2 {
-  position: relative;
-  color: white;
-  width: 40%; 
-  height: 100%;
-  border: 2px solid white;
-  box-sizing: border-box; 
-  display: flex;  
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.menu2{
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.rectangle-background2{
-  
-  display: flex;
-  flex-direction: column;
-  width: 90vw;
-  height: 90vh; 
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  padding-top: 1%;
-  padding-bottom: 1%;
-}
-
-.center2{
-  position: relative;
-  display: flex;
-  margin:0;
-  width: 40%;
-  height: 90%;  
-  margin: 0;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.location2{
-  
-  width: 90vw;
-  height: 95%;
-  
-}
 
 .Footer{
   height: 5vh;
+  width: 100vw;
   background-color: #39293a;
   text-align: center;
   color: white;
@@ -538,6 +485,95 @@ text-shadow: 2px 2px black;
   justify-content: center;
   font-size: 2vh;
 }
+
+/* Mobile Devices (up to 600px) */
+@media only screen and (max-width: 600px) and (orientation: portrait) {
+
+
+
+
+ #sign_in,#sign_up{
+  height: 70%;
+  width: 80%;
+ }
+
+ #sign_up ::placeholder{
+  font-size: 70%;
+ }
+
+
+}
+
+@media only screen and (max-width: 600px) and (orientation: landscape)   {
+
+  #sign_in,#sign_up{
+   height: 80%;
+   width: 20%;
+  }
+ 
+ 
+ }
+
+/* Tablets (601px to 992px) */
+@media only screen and (min-width: 601px) and (max-width: 1023px) and (orientation: portrait) {
+  
+ .right_container{
+  width: 100%;
+  height: 100%;
+ }
+ #sign_in,#sign_up{
+  height: 70%;
+  width: 60%;
+ }
+
+
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1023px) and (orientation: landscape) {
+  #sign_in,#sign_up{
+    height: 90%;
+    width: 30%;
+   }
+
+   #sign_in h4{
+    font-size: 70%;
+   }
+
+   #sign_up h4{
+    font-size: 60%;
+   }
+
+   #sign_up ::placeholder{
+    font-size: 70%;
+   }
+
+   #sign_up input[type="submit"]{
+    font-size: 50%;
+   }
+
+
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+  #sign_in,#sign_up{
+    height: 80%;
+    width: 60%;
+   }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1366px)and (orientation: landscape)  {
+  #sign_in,#sign_up{
+    height: 75%;
+    width: 35%;
+   }
+}
+
+
+/* Desktops (993px and up) */
+@media only screen and (min-width: 993px) {
+  /* Your desktop-specific styles here */
+}
+
 
 
 

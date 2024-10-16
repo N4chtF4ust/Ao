@@ -10,49 +10,15 @@
 
 </head>
 <body>
-
- 
-
-
-
   <div class="homepage">
-
-          <div class="left_container">
-              <div class="welcome">
-                  <h2>Welcome to</h2> 
-                  <h1>AO Japanese Cuisine</h1>
-                  <h5>Experience authentic Japanese flavors with us</h5>
-              </div> 
-
-              <div class="contacts">
-                <div id="phone">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="50%" height="50%" fill="currentColor" class="bi bi-telephone-inbound-fill" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877zM15.854.146a.5.5 0 0 1 0 .708L11.707 5H14.5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 1 0v2.793L15.146.146a.5.5 0 0 1 .708 0"/>
-                  </svg>
-                </div>
-             <div id="fb">
-              <svg xmlns="http://www.w3.org/2000/svg" width="50%" height="50%" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
-              </svg>
-
-             </div>
-              <div id="gmail">
-                <svg xmlns="http://www.w3.org/2000/svg" width="50%" height="50%" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
-                  <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
-                </svg>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="right_container">
+          <div class="right_container" id="right_container">
 
             <div id="sign_in">
               <h1>Sign in</h1>
               <form action="" method="post">
                 <div id="username-wrapper" class="outline">
-                  <input type="text" id="signup-username" name="signup-username" placeholder="Enter username" style="order: 2" >
-                  <label for="username" id="placehold"></label>
+                  <input type="text" id="sign_in-username" name="signup-username" placeholder="Enter username" style="order: 2" >
+                  <label for="sign_in-username" id="placehold"></label>
                   <div id="logo_user" style="order: 1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="80%" height="80%" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                       <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
@@ -63,11 +29,11 @@
 
                 <div id="password-wrapper" class="outline">
                   <input type="password" id="password1" name="password" placeholder="Enter password" style="order: 2">
-                  <label for="password" id="placehold" ></label>
+                  <label for="password1" id="placehold" ></label>
 
                   <div id="eye" style="order: 3">
                   
-                    <img src="homepage_photo\eye-fill.png" id="img_eye1" alt="" onclick="eye(document.getElementById('password1'),document.getElementById('img_eye1'))">
+                    <img src="homepage_photo\eye-fill.svg" id="img_eye1" alt="" onclick="eye(document.getElementById('password1'),this)">
              
                   </div>
                  
@@ -93,13 +59,13 @@
                   <input type="text" id="firstname" name="firstname" placeholder="Enter firstname" class="outline">
                   <label for="firstname" id="placehold"></label>
                   <input type="text" id="lastname" name="lasttname" placeholder="Enter lasttname" class="outline" >
-                  <label for="lasttname" id="placehold"></label>
+                  <label for="lastname" id="placehold"></label>
              
                 </div>
 
                 <div id="signup-username-wrapper" class="outline">
                   <input type="text" id="signup-username" name="signup-username" placeholder="Enter username" style="order: 2" >
-                  <label for="username" id="placehold"></label>
+                  <label for="signup-username" id="placehold"></label>
                   <div id="logo_user" style="order: 1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="70%" height="70%" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                       <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
@@ -109,11 +75,11 @@
                 </div>
 
                 <div id="signup-contact-wrapper" class="outline">
-                  <input type="tel" id="signup-username" name="signup-contact" placeholder="Enter contact" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" style="order: 2" >
-                  <label for="contact" id="placehold"></label>
+                  <input type="tel" id="signup-contact" name="signup-contact" placeholder="Enter contact" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" style="order: 2" >
+                  <label for="signup-contact" id="placehold"></label>
 
                   <div id="logo_user" style="order: 1">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="60%" height="60%" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                    <svg id="logo_contact" xmlns="http://www.w3.org/2000/svg" width="60%" height="60%" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
                       <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
                     </svg>
                   </div>
@@ -123,7 +89,7 @@
                 <div id="signup-location-wrapper" class="outline">
 
                   <input type="text" id="signup-location" name="signup-location" placeholder="Enter address" style="order: 2" >
-                  <label for="contact" id="placehold"></label>
+                  <label for="signup-location" id="placehold"></label>
 
                   <div id="logo_user" style="order: 1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="60%" height="60%" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
@@ -136,11 +102,11 @@
 
                    <div id="signup-password-wrapper" class="outline">
                   <input type="password" id="password2" name="password2" placeholder="Enter password" style="order: 2">
-                  <label for="password" id="placehold" ></label>
+                  <label for="password2" id="placehold" ></label>
 
                   <div id="eye" style="order: 3">
                   
-                    <img src="homepage_photo\eye-fill.png" id="img_eye2" alt="" onclick="eye(document.getElementById('password2'),document.getElementById('img_eye2'))">
+                    <img src="homepage_photo\eye-fill.svg" id="img_eye2" alt="" onclick="eye(document.getElementById('password2'),this)">
              
                   </div>
                  
@@ -153,11 +119,11 @@
 
                 <div id="signup-re-enter-password-wrapper" class="outline">
                   <input type="password" id="password3" name="password3" placeholder="Re-enter password" style="order: 2">
-                  <label for="password" id="placehold" ></label>
+                  <label for="password3" id="placehold" ></label>
 
                   <div id="eye" style="order: 3">
                   
-                    <img src="homepage_photo\eye-fill.png" id="img_eye3" alt="" onclick="eye(document.getElementById('password3'),document.getElementById('img_eye3'))">
+                    <img src="homepage_photo\eye-fill.svg" id="img_eye3" alt="" onclick="eye(document.getElementById('password3'),this)">
              
                   </div>
                  
@@ -169,57 +135,27 @@
                 </div>
 
                 <input type="submit" value = "Sign up">
-
+                
               </form>
-
               <h4 onclick="toggle_signup(document.getElementById('sign_up'),document.getElementById('sign_in'))">Sign in</h4>
-    
-
             </div>
-
           </div>
 
           <div class="bg">
                   <img src="homepage_photo\land.png" alt="land" id="land">
-                  <img src="homepage_photo\obj1.png" alt="temple" id="obj1">
-                  <img src="homepage_photo\obj2.png" alt="shinto" id="obj2">
-                  <img src="homepage_photo\obj3.png" alt="temple" id="obj3">
-                  <img src="homepage_photo\obj4.png" alt="temple" id="obj4">
-                  <img src="homepage_photo\Mountain.png" alt="mountain" id="Mountain">
-                  <img src="homepage_photo\cloud1.png" alt="cloud" id="cloud1">
-                  <img src="homepage_photo\cloud2.png" alt="cloud" id="cloud2">
-                  <img src="homepage_photo\cloud3.png" alt="cloud" id="cloud3">
-                  <img src="homepage_photo\moon.png" alt="moon" id="moon">
+                  <img src="homepage_photo\obj1.svg" alt="temple" id="obj1">
+                  <img src="homepage_photo\obj2.svg" alt="shinto" id="obj2">
+                  <img src="homepage_photo\obj3.svg" alt="temple" id="obj3">
+                  <img src="homepage_photo\obj4.svg" alt="temple" id="obj4">
+                  <img src="homepage_photo\Fujjjii.svg" alt="mountain" id="Mountain">
+                  <img src="homepage_photo\cloud1.svg" alt="cloud" id="cloud1">
+                  <img src="homepage_photo\cloud2.svg" alt="cloud" id="cloud2">
+                  <img src="homepage_photo\cloud3.svg" alt="cloud" id="cloud3">
+                  <img src="homepage_photo\moon.svg" alt="moon" id="moon">
           </div>
 
   </div>
 
-  <div class="foodlist">
-
-      
-
-  </div>
-
-
-  
-  <div class="location">
-        <div class="rectangle-background2">
-              <div class="flex-header2">
-                <div class="menu2">
-                  <h2>LOCATION</h2>
-                </div>
-              </div>
-
-              <div class="center2">
-                  <iframe class="location2" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3862.312982348645!2d121.2613305!3d14.
-                  5240815!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397eb7aa95c0815%3A0xefdc29a848e2d9a5!2sAO%20Japanese%20Cuisine%20Restaurant!
-                  5e0!3m2!1sen!2sph!4v1715867009445!5m2!1sen!2sph" 
-                  loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                  </iframe>
-              </div>
-        </div>
-  </div>
-  
   <div class="Footer">
     <p>&#169; 2024 AO Japanese Cuisine</p>
   </div>
