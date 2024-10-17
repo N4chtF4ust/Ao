@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Permanent+Marker&display=swap');
+
+:root{
+    --background_color_left_container--:#e25d70;;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    font-family: "Open Sans", sans-serif;
+    overflow: hidden;
+}
+nav{
+    background-color: red;
+    width: 100%;
+    height: 10%;
+    position: fixed;
+    z-index: 1;
+
+}
+
+.container_wrapper{
+    width: 100%;
+    height: 90%;
+    background-color:#1b1717;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact_wrapper{
+    position: absolute;
+    background-color: #eeebdd;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    border-radius: 30px;
+}
+
+.left_container{
+    background-color:var(--background_color_left_container--);
+    border-radius: 30px 0 0 30px;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left_container iframe{
+    border-radius: 15px;
+    width: 90%;
+    height: 90%;
+}
+.right_container{
+    height: 100%;
+    width: 50%;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+  
+
+}
+
+.right_container h1{
+    position: absolute;
+    top: 5%;
+}
+.right_container form{
+    
+   
+    width: 80%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    left: 5%;
+    font-weight: bolder;
+
+    
+}
+
+.right_container form input:not(input[type="submit"]){
+    width: 48%;
+    height: 10%;
+    border-radius: 15px;
+    border: 1px solid black;
+    
+    padding-left: 2%;
+  
+}
+
+.right_container form input:focus{
+    outline-color: var(--background_color_left_container--);
+    color: var(--background_color_left_container--);
+  
+}
+
+.right_container form input[type="submit"]{
+    background-image: url(../contact-assets/send.svg);
+    background-repeat: no-repeat;
+    background-position:calc(15%);
+    background-size: 20%;
+    color: #ffffff;
+   
+    padding-left: 5%;
+    font-weight: bolder ;
+    background-color: var(--background_color_left_container--);
+    width:20%;
+    height: 15%;
+    border-radius: 20px;
+    
+    border: none;
+   
+}
+
+
+#Messages{
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+    padding: 2%;
+    outline-color: var(--background_color_left_container--);
+    resize: none;
+}
+
+.social{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.social img{
+    width:25%;
+    cursor: pointer;
+}
+
+.social_svg{
+
+    width: 20%;
+    height: 40%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 600px) and (orientation: portrait) {
+body{
+    height: 200vh;
+    overflow-y: auto;
+    background-color: yellow;
+  
+}
+
+
+.container_wrapper{
+    height: 100%;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    position: relative;
+   
+}
+.contact_wrapper{
+    flex-direction: column-reverse;
+}
+.left_container{
+   
+    width: 100%;
+    border-radius: 0 0 30px 30px;
+   
+}
+
+
+.right_container{
+    width: 100%;
+
+}
+}
+
+/* Tablets (601px to 992px) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) and (orientation: portrait) {
+  
+    body{
+        height: 200vh;
+        overflow-y: auto;
+        background-color: yellow;
+      
+    }
+    
+    
+    .container_wrapper{
+        height: 100%;
+        display: grid;
+        place-content: center;
+        place-items: center;
+        position: relative;
+       
+    }
+    .contact_wrapper{
+        flex-direction: column-reverse;
+    }
+    .left_container{
+       
+        width: 100%;
+        border-radius: 0 0 30px 30px;
+       
+    }
+    
+    
+    .right_container{
+        width: 100%;
+    
+    }
+   
+   
+   }
