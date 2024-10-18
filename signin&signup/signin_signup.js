@@ -29,15 +29,12 @@ let moon = document.getElementById("moon");
 window.addEventListener('scroll', () => {
 
   let value = window.scrollY;
-  moon.style.marginTop = value * 1 + 'px';
-  cloud1.style.left = value * -3+ 'px';
-  cloud2.style.marginLeft = value * -3+ 'px';
-  cloud3.style.right = value * -3+ 'px';
-  obj1.style.marginBottom = value * -.2+ 'px';
-  obj2.style.marginBottom = value * -.2+ 'px';
-  obj3.style.marginBottom = value * -.2+ 'px';
-  obj4.style.marginBottom = value * -.2+ 'px';
-  mountain.style.marginBottom = value * -.2+ 'px';
+  moon.style.marginTop = value * .1 + '%';
+  cloud1.style.left = value * -.1+ '%';
+  cloud2.style.marginLeft = value * .1+ '%';
+  cloud3.style.right = value * -.1+ '%';
+ 
+  mountain.style.marginBottom = value * -.05+ '%';
 
 });
 

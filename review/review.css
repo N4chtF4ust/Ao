@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Permanent+Marker&display=swap');
+
+:root{
+    --background_color_left_container--:#e25d70;;
+    --nav-header--:#810000;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    font-family: "Open Sans", sans-serif;
+    overflow: hidden;
+}
+nav{
+    background-color:var(--nav-header--);
+    width: 100%;
+    height: 10%;
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+
+nav button{
+    position: fixed;
+    top: 2.5%;
+    right: 3%;
+    width: 8%;
+    height: 5%;
+    border-radius: 15px;
+    border: none;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bolder;
+    color: var(--nav-header--);
+    font-size: 100%;
+    text-wrap: nowrap;
+    
+}
+.menu_logo_wrapper{
+    top: 2.5%;
+    left: 5%;
+    z-index: 2;
+    width: 10%;
+    height: 5%;
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    
+}
+
+.menu_logo{
+    display: none;
+    
+}
+
+.menu_logo.click::before,.menu_logo.click::after{
+    transition:  .3s ease-in-out;
+    
+}
+
+.menu_logo,.menu_logo::before,.menu_logo::after{
+    border-radius: 15px;
+}
+
+.menu_logo{
+    z-index: 2;
+    width: 100%;
+    height: 20%;
+    background-color: black;
+}
+
+.menu_logo::before{
+    position: absolute;
+    top: 0;
+    content: "";
+    width: 100%;
+    height: 20%;
+    background-color: black;
+}
+
+.menu_logo::after{
+    position: absolute;
+    bottom: 0;
+    content: "";
+    width: 100%;
+    height: 20%;
+    background-color: black;
+}
+
+.nav_wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    height: 50%;
+    font-weight: bolder;
+    align-items: center;
+    font-size: 80%;
+    text-wrap: nowrap;
+   
+}
+
+.container_wrapper{
+    width: 100%;
+    height: 90%;
+    background-color:#1b1717;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.review_wrapper{
+    height: 90%;
+    width: 70%;
+   
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    
+}
+
+.review_box{
+    width: 25%;
+    height: 50%;
+    display: grid;
+    place-items: center;
+
+    
+ 
+}
+
+.review_content{
+    width: 90%;
+    height: 90%;
+    background-color: #e25d70;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 600px) and (orientation: portrait) {
+
+
+.review_box{
+    width: 100%;
+}
+
+.review_content{
+ 
+    border-radius: 15px;
+}
+
+
+nav button{
+    top: 2.5%;
+ 
+    width: 18%;
+    height: 5%;
+    border-radius: 10px;
+    z-index: -1;
+ 
+}
+
+/*Hamburger menu*/
+.menu_logo{
+    display: block;
+    
+}
+
+
+.nav_wrapper{
+    position: absolute;
+    flex-direction: column;
+    top: 0;
+    z-index: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    background-color: var(--nav-header--);
+}
+
+.nav_wrapper.click{
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu_logo.click::before{
+    transform: translateY(200%) rotate(45deg);
+}
+
+.menu_logo.click::after{
+    transform: translateY(-200%) rotate(-45deg);
+}
+
+.menu_logo.click:nth-child(1){
+    background-color: transparent;
+}
+/*------------------*/
+  
+
+}
+
+
+
+@media only screen and (min-width: 601px) and  (max-width: 1024px) and (orientation: portrait) {
+    .review_box{
+        width: 50%;
+    }
+    
+    .review_content{
+     
+        border-radius: 15px;
+    }
+
+    /*Hamburger menu*/
+.menu_logo{
+    display: block;
+}
+
+.menu_logo_wrapper{
+    width: 8%;
+}
+
+
+.nav_wrapper{
+    position: absolute;
+    flex-direction: column;
+    top: 0;
+    z-index: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    background-color: var(--nav-header--);
+}
+
+.nav_wrapper.click{
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu_logo.click::before{
+    transform: translateY(200%) rotate(45deg);
+}
+
+.menu_logo.click::after{
+    transform: translateY(-200%) rotate(-45deg);
+}
+
+.menu_logo.click:nth-child(1){
+    background-color: transparent;
+}
+/*------------------*/
+
+
+}
+
+
