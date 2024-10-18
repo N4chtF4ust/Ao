@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Webweb</title>
+<link rel="stylesheet" href="menu.css">
+<script src="menu.js"></script>
+
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li class="logo"><img src="path/to/your/logo.png" alt="Logo"></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Service</a></li>
+            <li class="shop-icon"><a href="#cart"><img src="path/to/shop-icon.png" alt="Shop" onclick="toggleShopSection()" /></a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Welcome to Ron's Restaurant</h1>
+        <p><i>Pagkatapos mo mag saing, pwede mo na akong ulamin - Anjo2k24</i></p>
+    </header>
+
+    <div class="best-products">
+        <h2>Best Products</h2>
+        <div class="carousel">
+            <div class="carousel-inner" id="slideshow">
+
+                <!-- Display products -->
+                <div class="carousel-item">
+                    <div class="product-box">
+                        <div class="tooltip"><img src="Ramen.jpg" alt="Product 1"><span class="tooltiptext">Best Ramen</span>
+                       
+                       
+                   </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="product-box">
+                        <div class="tooltip">
+                        <img src="Ramen.jpg" alt="Product 2"><span class="tooltiptext">Best Ramen</span>
+                        
+                       </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="product-box">
+                        <div class="tooltip">
+                        <img src="Ramen.jpg" alt="Product 3"><span class="tooltiptext">Best Ramen</span>
+                        
+                    </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="product-box">
+                        <div class="tooltip">
+                            <img src="Ramen.jpg" alt="Product 4"><span class="tooltiptext">Best Ramen</span>
+                            
+                        </div>
+                    
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="product-box">
+                        <div class="tooltip">
+                            <img src="Ramen.jpg" alt="Product 5"><span class="tooltiptext">Best Ramen</span>
+                            
+                        </div>
+                      
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="product-box">
+                        <div class="tooltip">
+                            <img src="Ramen.jpg" alt="Product 6"><span class="tooltiptext">Best Ramen</span>
+                            
+                        </div>
+                      
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="product-box">
+                        <div class="tooltip">
+                            <img src="Ramen.jpg" alt="Product 7"><span class="tooltiptext">Best Ramen</span>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="product-box">
+                        <div class="tooltip">
+                            <img src="Ramen.jpg" alt="Product 8"><span class="tooltiptext">Best Ramen</span>
+                            
+                        </div>
+                     
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="product-box">
+                        <div class="tooltip">
+                            <img src="Ramen.jpg" alt="Product 9"><span class="tooltiptext">Best Ramen</span>
+                            
+                        </div>
+                    
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="product-box">
+                        <div class="tooltip">
+                            <img src="Ramen.jpg" alt="Product 10"><span class="tooltiptext">Best Ramen</span>
+                            
+                        </div>
+                   
+                    </div>
+                </div>
+            </div>
+           
+           
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </div>
+    <br>
+    <br>
+   
+    <div class="shop-section" id="shop-section">
+        <h2>Your Cart</h2>
+        <p>No items in your cart.</p>
+    </div>
+   
+    <div class="container">
+        <h1>Product Categories</h1>
+        <div class="categories">
+            <button onclick="filterProducts('all')">All</button>
+            <button onclick="filterProducts('ramen')">Ramen</button>
+            <button onclick="filterProducts('soup')">Soup</button>
+            <button onclick="filterProducts('chinese')">Chinese</button>
+            <button onclick="filterProducts('beverages')">Beverages</button>
+        </div>
+       
+        <div class="products" id="productList">
+            <div class="product" data-category="ramen">
+                <img src="Ramen.jpg" alt="Instant Ramen">
+                <p>Instant Ramen</p>
+            </div>
+            <div class="product" data-category="ramen">
+                <img src="Ramen.jpg" alt="Spicy Ramen">
+                <p>Spicy Ramen</p>
+            </div>
+            <div class="product" data-category="ramen">
+                <img src="Ramen.jpg" alt="Chicken Ramen">
+                <p>Chicken Ramen</p>
+            </div>
+            <div class="product" data-category="soup">
+                <img src="Ramen.jpg" alt="Tom Yum Soup">
+                <p>Tom Yum Soup</p>
+            </div>
+            <div class="product" data-category="soup">
+                <img src="Ramen.jpg" alt="Miso Soup">
+                <p>Miso Soup</p>
+            </div>
+            <div class="product" data-category="soup">
+                <img src="Ramen.jpg" alt="Vegetable Soup">
+                <p>Vegetable Soup</p>
+            </div>
+            <div class="product" data-category="chinese">
+                <img src="Ramen.jpg" alt="Kung Pao Chicken">
+                <p>Kung Pao Chicken</p>
+            </div>
+            <div class="product" data-category="chinese">
+                <img src="Ramen.jpg" alt="Sweet and Sour Pork">
+                <p>Sweet and Sour Pork</p>
+            </div>
+            <div class="product" data-category="chinese">
+                <img src="Ramen.jpg" alt="Fried Rice">
+                <p>Fried Rice</p>
+            </div>
+            <div class="product" data-category="beverages">
+                <img src="Ramen.jpg" alt="Green Tea">
+                <p>Green Tea</p>
+            </div>
+            <div class="product" data-category="beverages">
+                <img src="Ramen.jpg" alt="Bubble Tea">
+                <p>Bubble Tea</p>
+            </div>
+            <div class="product" data-category="beverages">
+                <img src="Ramen.jpg" alt="Soda">
+                <p>Soda</p>
+            </div>
+        </div>
+    </div>
+   
+    
+
+    </body>
+</html>  

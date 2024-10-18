@@ -1,0 +1,305 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-image: url('Ramen.jpg');
+    background-size: cover;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    font-size: 3em;
+}
+
+h2 {
+    text-align: center;
+}
+
+header p {
+    font-size: 1.5em;
+}
+
+nav {
+    background-color: white;
+    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+ul {
+    list-style-type: none;
+    padding: 2% 5%;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+li {
+    margin-right: 5vw;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+li:hover {
+    color: gray;
+}
+
+.logo img {
+    height: 5vh;
+    margin-right: 10vw;
+}
+
+.best-products {
+    margin-top: 7vh;
+    text-align: center;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 80vw;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: calc(100 * 5);
+}
+
+.carousel-item {
+    display: flex;
+    justify-content: center;
+    margin: 0%;
+    width: 20%;
+    height: 50%;
+}
+
+.product-box {
+    background-color: #f9f9f9;
+    border-radius: 1vh;
+    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+    height: 15vh;
+    width: 15vw;
+    margin: 1vw;
+    display: flex;
+    flex-direction: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.floating {
+    transform: scale(1.1);
+}
+
+.floating-side {
+    transform: scale(0.9);
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 1vh;
+}
+
+ button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 1vh;
+    padding: 1vh;
+    cursor: pointer;
+    margin-top: 1vh;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 30%;
+    height: 32%;
+    width: 3.5%;
+    opacity: 0.5;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 2;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.shop-section {
+    display: none;
+    text-align: center;
+    margin: 2vh;
+    position: fixed;
+    right: 0;
+    top: 15vh;
+    width: 15vw;
+    height: 25vh;
+    border-left: 0.1vw solid #ccc;
+    background-color: white;
+    box-shadow: -0.2vw 0 0.5vh rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.shop-section.active {
+    display: block;
+}
+
+.container {
+    max-width: 80vw;
+    margin: 0 auto;
+    padding: 2%;
+}
+
+h1 {
+    text-align: center;
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2vh;
+    text-align: center;
+}
+
+.categories button {
+    margin: 0 1vw;
+    padding: 1% 2%;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    border-radius: 4vh;
+    transition: background-color 0.3s;
+}
+
+.categories button:hover {
+    background-color: #0056b3;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vw;
+}
+
+
+.product {
+    background: white;
+    width: 25vw;
+    height: 15vh;
+    padding: 0;
+    border: 0.1vw solid #ddd;
+    border-radius: 1vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 1vh 4vh rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+
+.product p {
+    position: relative;
+    z-index: 2;
+    color: white;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2%;
+   
+   
+}
+
+.tooltip {
+position: relative;
+display: inline-block;
+border-bottom: 1px dotted black;
+text-decoration: none;
+}
+
+.tooltip .tooltiptext {
+visibility: hidden;
+width: 100px;
+background-color: black;
+color: #fff;
+text-align: center;
+border-radius: 1px;
+padding: 5px 0;
+text-decoration: none;
+
+
+position: absolute;
+z-index: 1;
+top: 50%;
+left: 60%;
+margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+visibility: visible;
+}
+
+
+@media(min-width: 375px) and (min-width: 414px){
+
+.nav{
+    text-align: center;
+    font-size: 100px;
+}
+  
+}
+
+@media (max-width: 600px) and (orientation: portrait) {
+.products {
+grid-template-columns: repeat(2, 1fr);
+}
+.product {
+width: 40vw;
+height: 20vh;
+      
+}
+}
+    
+      
+    
+
+
+
+ 
