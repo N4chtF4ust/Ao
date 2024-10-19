@@ -3,13 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="contact.js" defer></script>
     <link rel="stylesheet" href="contact.css">
     <title>Contact</title>
 </head>
 <body>
+    <div class="menu_logo_wrapper" onclick="menu_click(document.getElementById('nav_wrapper'),document.getElementById('menu_logo'))">
+        <div class="menu_logo" id="menu_logo"></div>
+        <div class="menu_logo_center" id="menu_logo_center"></div>
+    </div>
+
+   
+   
     <nav>
+        <div class="nav_wrapper" id="nav_wrapper">
+            <h3 onclick="">Home</h3>
+            <h3>About Us</h3>
+            <h3>Products</h3>
+            <h3 onclick="window.location.href='../review/review.html'">Reviews</h3>
+            <h3 onclick="window.location.href='../contacts/contact.html'">Contacts</h3>
+        </div>
+        <button>Name</button>
+        
 
     </nav>
+
+    <div class="logo_wrapper">
+        <img src="..\review\review-asset\logo_processed.png" alt="">
+    </div>
 
     <div class="container_wrapper">
  

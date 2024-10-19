@@ -2,7 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Permanent+Marker&display=swap');
 
 :root{
+    --background_color_left_container--:#e25d70;
     --background_color_left_container--:#e25d70;;
+    --nav-header--:#EEEBDD;
+    --menu-logo--:#810000;
 }
 
 body{
@@ -14,14 +17,151 @@ body{
     font-family: "Open Sans", sans-serif;
     overflow: hidden;
 }
+/*Navigation*/
 nav{
-    background-color: red;
+    background-color:var(--nav-header--);
     width: 100%;
     height: 10%;
     position: fixed;
     z-index: 1;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #810000;
 }
+
+.logo_wrapper{
+    width: 10%;
+    height: 10%;
+    position: relative;
+    
+    
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.logo_wrapper img{
+   
+    width: 40%;
+
+
+   
+   
+}
+
+
+nav button{
+    
+    position: fixed;
+    top: 2.5%;
+    right: 3%;
+    width: 8%;
+    height: 5%;
+    border-radius: 15px;
+    border: none;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bolder;
+    color: var(--nav-header--);
+    font-size: 2vmin;
+    text-wrap: nowrap;
+    background-color: #810000;
+    
+}
+.menu_logo_wrapper{
+    top: 2.5%;
+    left: 5%;
+    z-index: 2;
+    width: 10%;
+    height: 5%;
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    
+    
+}
+
+.menu_logo{
+    display: none;
+    
+}
+
+.menu_logo.click::before,.menu_logo.click::after{
+    transition:  .3s ease-in-out;
+    
+}
+
+.menu_logo,.menu_logo::before,.menu_logo::after{
+    border-radius: 15px;
+}
+
+.menu_logo{
+    
+    width: 100%;
+    height: 20%;
+    background-color: var(--menu-logo--);
+    z-index: 3;
+}
+
+.menu_logo::before{
+    position: absolute;
+    top: 0;
+    content: "";
+    width: 100%;
+    height: 20%;
+    background-color: var(--menu-logo--);
+}
+
+.menu_logo::after{
+    position: absolute;
+    bottom: 0;
+    content: "";
+    width: 100%;
+    height: 20%;
+    background-color: var(--menu-logo--);
+}
+
+.nav_wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    height: 50%;
+    font-weight: bolder;
+    align-items: center;
+    font-size: 1.5vmin;
+    text-wrap: nowrap;
+    z-index: 2;
+    
+   
+}
+
+.nav_wrapper h3{
+    margin: 0;
+    padding: 0;
+    
+
+    
+}
+
+.nav_wrapper h3{
+    transition: .3s ease-in-out;
+}
+.nav_wrapper h3:hover{
+    color: var(--nav-header--);
+    background-color: var(--menu-logo--);
+    padding: 1%;
+    border-radius: 10px;
+    
+}
+
+
+
+/*---------*/
+
 
 .container_wrapper{
     width: 100%;
@@ -32,6 +172,7 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .contact_wrapper{
@@ -164,7 +305,7 @@ nav{
 body{
     height: 200vh;
     overflow-y: auto;
-    background-color: yellow;
+    
   
 }
 
@@ -192,6 +333,75 @@ body{
     width: 100%;
 
 }
+
+/*Nav*/
+
+nav button{
+    top: 2.5%;
+    width: 18%;
+    height: 5%;
+    border-radius: 10px;
+}
+
+/*Hamburger menu*/
+.logo_wrapper{
+    display: none;
+}
+.menu_logo{
+    display: block;
+}
+
+.nav_wrapper{
+    position: absolute;
+    flex-direction: column;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    
+    background-color: var(--nav-header--);
+    transition: .3s ease-in-out;
+    left: -100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vmin;
+    
+}
+
+.nav_wrapper :not(:nth-child(5)){
+  margin-bottom: 5%;
+}
+
+.nav_wrapper h3:active{
+    color: #EEEBDD;
+    background-color: #810000;
+    border-radius: 5px;
+    padding: 1%;
+   
+}
+
+
+
+
+.nav_wrapper.click{
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu_logo.click::before{
+    transform: translateY(200%) rotate(45deg);
+}
+
+.menu_logo.click::after{
+    transform: translateY(-200%) rotate(-45deg);
+}
+
+.menu_logo.click:nth-child(1){
+    background-color: transparent;
+}
+/*------------------*/
+  
 }
 
 /* Tablets (601px to 992px) */
@@ -228,6 +438,81 @@ body{
         width: 100%;
     
     }
+
+        /*Nav*/
+
+        nav button{
+            top: 2.5%;
+            width: 18%;
+            height: 5%;
+            border-radius: 10px;
+        }
+    
+        /*Hamburger menu*/
+    
+    
+    .logo_wrapper{
+        display: none;
+    }
+    
+    .menu_logo{
+        display: block;
+    }
+    
+    .menu_logo_wrapper{
+        width: 8%;
+    }
+    
+    
+    .nav_wrapper{
+        position: absolute;
+        flex-direction: column;
+        top: 0;
+    
+        height: 100vh;
+        width: 100vw;
+       
+        background-color: var(--nav-header--);
+        left: -100%;
+        transition: .3s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .nav_wrapper :not(:nth-child(5)){
+        margin-bottom: 5%;
+      }
+      
+      .nav_wrapper h3:active{
+          color: #EEEBDD;
+          background-color: #810000;
+          border-radius: 5px;
+          padding: 1%;
+         
+      }
+    
+    .nav_wrapper.click{
+        transition: .3s ease-in-out;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .menu_logo.click::before{
+        transform: translateY(200%) rotate(45deg);
+    }
+    
+    .menu_logo.click::after{
+        transform: translateY(-200%) rotate(-45deg);
+    }
+    
+    .menu_logo.click:nth-child(1){
+        background-color: transparent;
+    }
+    /*------------------*/
+    
    
    
    }
