@@ -3,8 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 :root{
-    --background_color_left_container--:#e25d70;
-    --background_color_left_container--:#e25d70;;
+    --background_color_left_container--:#810000;
+    
     --nav-header--:#EEEBDD;
     --menu-logo--:#810000;
 }
@@ -23,6 +23,7 @@ body{
  
 
 }
+
 /*Navigation*/
 nav{
     background-color:var(--nav-header--);
@@ -31,37 +32,33 @@ nav{
     position: fixed;
     z-index: 1;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     color: #810000;
+    box-shadow: 0 0 5px black;
 }
 
 .logo_wrapper{
-    width: 10%;
-    height: 10%;
-    position: relative;
-    
-    
+    width: 4%;
+ 
     z-index: 2;
     display: grid;
     place-items: center;
     overflow: hidden;
+    margin-left: 5%;
+   
 }
 
 .logo_wrapper img{
-   
-    width: 8vh;
-   
-}
+ width: 100%;
 
+}
 
 nav button{
     
-    position: fixed;
-    top: 2.5%;
-    right: 3%;
+   margin-right: 3%;
     width: 8%;
-    height: 5%;
+    height: 50%;
     border-radius: 15px;
     border: none;
     font-family: "Open Sans", sans-serif;
@@ -69,22 +66,24 @@ nav button{
     color: var(--nav-header--);
     font-size: 2vmin;
     text-wrap: nowrap;
+  
     background-color: #810000;
+    cursor: pointer;
     
 }
 .menu_logo_wrapper{
-    top: 4%;
+    top: 3%;
     left: 5%;
-    z-index: 2;
-    width: 3vh;
-    height: 3vh;
+    z-index: 3;
+    width: 4vh;
+    height: 4vh;
+    position: relative;
  
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    
+  
     
 }
 
@@ -111,20 +110,22 @@ nav button{
 }
 
 .menu_logo::before{
-    position: absolute;
+    
     top: 0;
     content: "";
     width: 100%;
     height: 20%;
+    position: absolute;
     background-color: var(--menu-logo--);
 }
 
 .menu_logo::after{
-    position: absolute;
+   
     bottom: 0;
     content: "";
     width: 100%;
     height: 20%;
+    position: absolute;
     background-color: var(--menu-logo--);
 }
 
@@ -145,6 +146,7 @@ nav button{
 .nav_wrapper h3{
     margin: 0;
     padding: 0;
+    cursor: pointer;
     
 
     
@@ -163,13 +165,13 @@ nav button{
 
 
 
-/*---------*/
 
+/*-------*/
 
 .container_wrapper{
     width: 100%;
     height: 90%;
-    background-color:#1b1717;
+    background-color:var(--nav-header--);
     position: absolute;
     bottom: 0;
     display: flex;
@@ -180,7 +182,7 @@ nav button{
 
 .contact_wrapper{
     position: absolute;
-    background-color: #eeebdd;
+    background-color: #1b1717;
     width: 80%;
     height: 80%;
     display: flex;
@@ -189,7 +191,7 @@ nav button{
 
 .left_container{
    
-    border-radius: 30px 0 0 30px;
+    border-radius: 15px 0 0 15px;
     height: 100%;
     width: 50%;
     display: flex;
@@ -219,8 +221,9 @@ nav button{
     top: 5%;
     font-family: "Ubuntu", sans-serif;
     font-size: 200%;
-    margin: 0;
-    margin: 5%;
+    
+    margin-top: 5%;
+    color: var(--nav-header--);
     
 
 
@@ -240,6 +243,7 @@ nav button{
     position: relative;
     left: 5%;
     font-weight: bolder;
+    color: var(--nav-header--);
   
 
     
@@ -252,6 +256,8 @@ nav button{
  border: none;
     padding-left: 2%;
     padding: 1.3%;
+
+    
 
   
 }
@@ -267,11 +273,11 @@ nav button{
     background-repeat: no-repeat;
     background-position:calc(15%);
     background-size: 15%;
-    color: #ffffff;
+    color: #EEEBDD;
    
     padding-left: 2.5%;
     font-weight: bolder ;
-    background-color: var(--background_color_left_container--);
+    background-color:var(--menu-logo--);
     width:20%;
     height: 15%;
     border-radius: 20px;
@@ -304,6 +310,7 @@ nav button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: var(--nav-header--);
 }
 
 .social img{
@@ -340,7 +347,7 @@ body{
 .left_container{
    
     width: 100%;
-    border-radius: 0 0 30px 30px;
+    border-radius: 0 0 15px 15px;
 }
 
 #contact_form input[type="submit"]{
@@ -352,14 +359,86 @@ body{
 .right_container{
     width: 100%;
 }
+
+/*Nav*/
+nav button{
+    width: 20%;
+    border-radius: 10px;
+   
+}
+
+
+/*Hamburger menu*/
+.logo_wrapper{
+display: none;
+}
+.menu_logo{
+    display: block;
+}
+
+.nav_wrapper{
+    position: absolute;
+    flex-direction: column;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    
+    background-color: var(--nav-header--);
+    transition: .3s ease-in-out;
+    left: -150%;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vmin;
+    
+}
+
+.nav_wrapper :not(:nth-child(5)){
+  margin-bottom: 5%;
+}
+
+.nav_wrapper h3:active{
+    color: #EEEBDD;
+    background-color: #810000;
+    border-radius: 5px;
+    padding: 1%;
+   
+}
+.nav_wrapper.click{
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu_logo.click::before{
+    transform: translateY(200%) rotate(45deg);
+}
+
+.menu_logo.click::after{
+    transform: translateY(-200%) rotate(-45deg);
+}
+
+.menu_logo.click:nth-child(1){
+    background-color: transparent;
+}
+/*------------------*/
 }
 
 /*Mobile view landscape*/
 @media  screen and (max-width: 767px) and (orientation:landscape){
+
+/*Nav*/
+    nav{
+            height: 15%;
+        }
+        
+    nav button{
+            width: 10%;
+            border-radius: 10px;
+        }
+        /*-----------*/
     .right_container form {
         width: 50%;
-        background-color: aqua;
-       
       
     }
     .social{
@@ -367,8 +446,7 @@ body{
     }
 
     .social h3{
-        font-size: 4vh;
-
+        font-size: 4vh;  
     }
 
     #contact_form input[type="submit"]{
@@ -408,7 +486,7 @@ body{
 
     .left_container{   
         width: 100%;
-        border-radius: 0 0 30px 30px; 
+        border-radius: 0 0 15px 15px; 
     }
     
     .right_container{
@@ -419,6 +497,75 @@ body{
         width: 25%;
         border-radius: 30px;  
     }
+      /*Nav*/
+
+
+
+    /*Hamburger menu*/
+
+
+.logo_wrapper{
+    display: none;
+   }
+   
+   .menu_logo{
+       display: block;
+   }
+   
+   .menu_logo_wrapper{
+       width: 6%;
+   }
+   
+   
+   .nav_wrapper{
+       position: absolute;
+       flex-direction: column;
+       top: 0;
+   
+       height: 100vh;
+       width: 100vw;
+      
+       background-color: var(--nav-header--);
+       left: -150%;
+       transition: .3s ease-in-out;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+   }
+   
+   .nav_wrapper :not(:nth-child(5)){
+       margin-bottom: 5%;
+     }
+     
+     .nav_wrapper h3:active{
+         color: #EEEBDD;
+         background-color: #810000;
+         border-radius: 5px;
+         padding: 1%;
+        
+     }
+   
+   .nav_wrapper.click{
+       transition: .3s ease-in-out;
+       left: 0;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+   }
+   
+   .menu_logo.click::before{
+       transform: translateY(200%) rotate(45deg);
+   }
+   
+   .menu_logo.click::after{
+       transform: translateY(-200%) rotate(-45deg);
+   }
+   
+   .menu_logo.click:nth-child(1){
+       background-color: transparent;
+   }
+   /*------------------*/
+   
    
     
    
@@ -426,6 +573,8 @@ body{
    }
 
    @media  screen and (min-width: 768px) and (max-width: 1024px)  and  (orientation:landscape) {
+
+    
     .right_container form {
         width: 50%;
 

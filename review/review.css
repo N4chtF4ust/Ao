@@ -287,7 +287,10 @@ display: none;
 
 }
 
+/*Phone Landscape*/
+
 @media  screen and (max-width: 767px) and (orientation:landscape){
+    /*Nav*/
     nav{
         height: 15%;
     }
@@ -296,6 +299,8 @@ display: none;
         width: 10%;
         border-radius: 10px;
     }
+
+    /*-----------*/
 
     .review_wrapper{
         height: 80%;
@@ -309,7 +314,7 @@ display: none;
 
 
 
-
+/*Mobile view*/
 
 @media screen and (min-width: 768px) and  (max-width: 1024px)  {
    
