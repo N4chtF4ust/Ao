@@ -20,7 +20,7 @@ body{
     display: flex;
     font-family: "Open Sans", sans-serif;
 
-    overflow-y: auto;
+   overflow: hidden;
     background-color: var(--nav-header--);
 }
 
@@ -176,6 +176,7 @@ nav button{
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    overflow-y: auto;
 
   
 }
