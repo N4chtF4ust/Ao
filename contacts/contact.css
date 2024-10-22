@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 :root{
     --background_color_left_container--:#e25d70;
@@ -8,14 +9,19 @@
     --menu-logo--:#810000;
 }
 
+*{
+    margin: 0;
+    padding: 0;
+}
+
 body{
     margin: 0;
     padding: 0;
-    width: 100vw;
-    height: 100vh;
+
     display: flex;
     font-family: "Open Sans", sans-serif;
-    overflow: hidden;
+ 
+
 }
 /*Navigation*/
 nav{
@@ -44,10 +50,7 @@ nav{
 
 .logo_wrapper img{
    
-    width: 40%;
-
-
-   
+    width: 8vh;
    
 }
 
@@ -70,11 +73,11 @@ nav button{
     
 }
 .menu_logo_wrapper{
-    top: 2.5%;
+    top: 4%;
     left: 5%;
     z-index: 2;
-    width: 10%;
-    height: 5%;
+    width: 3vh;
+    height: 3vh;
  
     display: flex;
     flex-direction: column;
@@ -172,7 +175,7 @@ nav button{
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+  
 }
 
 .contact_wrapper{
@@ -181,11 +184,11 @@ nav button{
     width: 80%;
     height: 80%;
     display: flex;
-    border-radius: 30px;
+    border-radius: 15px;
 }
 
 .left_container{
-    background-color:var(--background_color_left_container--);
+   
     border-radius: 30px 0 0 30px;
     height: 100%;
     width: 50%;
@@ -194,40 +197,50 @@ nav button{
     align-items: center;
 }
 
-.left_container iframe{
-    border-radius: 15px;
-    width: 90%;
-    height: 90%;
-}
+
 .right_container{
     height: 100%;
     width: 50%;
    
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     position: relative;
 
-  
+}
 
+.right_container form label{
+    margin: 1%;
 }
 
 .right_container h1{
-    position: absolute;
+   
     top: 5%;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 200%;
+    margin: 0;
+    margin: 5%;
+    
+
+
 }
 .right_container form{
+ 
+   
     
    
     width: 80%;
     height: 60%;
     display: flex;
     flex-direction: column;
+  
+    align-self: flex-start;
     justify-content: space-between;
-    position: absolute;
+    position: relative;
     left: 5%;
     font-weight: bolder;
+  
 
     
 }
@@ -235,10 +248,11 @@ nav button{
 .right_container form input:not(input[type="submit"]){
     width: 48%;
     height: 10%;
-    border-radius: 15px;
-    border: 1px solid black;
-    
+    border-radius: 10px;
+ border: none;
     padding-left: 2%;
+    padding: 1.3%;
+
   
 }
 
@@ -252,15 +266,17 @@ nav button{
     background-image: url(../contact-assets/send.svg);
     background-repeat: no-repeat;
     background-position:calc(15%);
-    background-size: 20%;
+    background-size: 15%;
     color: #ffffff;
    
-    padding-left: 5%;
+    padding-left: 2.5%;
     font-weight: bolder ;
     background-color: var(--background_color_left_container--);
     width:20%;
     height: 15%;
     border-radius: 20px;
+    display: block;
+    font-size: 90%;
     
     border: none;
    
@@ -270,15 +286,17 @@ nav button{
 #Messages{
     height: 50%;
     width: 80%;
-    border-radius: 30px;
-    padding: 2%;
+    border-radius: 10px;
+    font-family: "Open Sans", sans-serif;
+    padding: 5%;
+    border: none;
     outline-color: var(--background_color_left_container--);
     resize: none;
 }
 
 .social{
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    bottom: 1%;
     width: 100%;
     height: 20%;
     text-align: center;
@@ -301,14 +319,13 @@ nav button{
     justify-content: space-evenly;
 }
 
-@media only screen and (max-width: 600px) and (orientation: portrait) {
+/*Mobile view*/
+
+@media  screen and (max-width: 767px) {
 body{
     height: 200vh;
     overflow-y: auto;
-    
-  
 }
-
 
 .container_wrapper{
     height: 100%;
@@ -316,7 +333,6 @@ body{
     place-content: center;
     place-items: center;
     position: relative;
-   
 }
 .contact_wrapper{
     flex-direction: column-reverse;
@@ -325,95 +341,55 @@ body{
    
     width: 100%;
     border-radius: 0 0 30px 30px;
-   
 }
 
+#contact_form input[type="submit"]{
+  width: 35%;
+ padding-left: 5%;
+  font-size: 85%;
+}
 
 .right_container{
     width: 100%;
-
+}
 }
 
-/*Nav*/
+/*Mobile view landscape*/
+@media  screen and (max-width: 767px) and (orientation:landscape){
+    .right_container form {
+        width: 50%;
+        background-color: aqua;
+       
+      
+    }
+    .social{
+        height: 15%;
+    }
 
-nav button{
-    top: 2.5%;
-    width: 18%;
-    height: 5%;
-    border-radius: 10px;
-}
+    .social h3{
+        font-size: 4vh;
 
-/*Hamburger menu*/
-.logo_wrapper{
-    display: none;
-}
-.menu_logo{
-    display: block;
-}
+    }
 
-.nav_wrapper{
-    position: absolute;
-    flex-direction: column;
-    top: 0;
-    height: 100vh;
-    width: 100vw;
-    
-    background-color: var(--nav-header--);
-    transition: .3s ease-in-out;
-    left: -100%;
-    justify-content: center;
-    align-items: center;
-    font-size: 3vmin;
-    
-}
+    #contact_form input[type="submit"]{
+        width: 30%;
 
-.nav_wrapper :not(:nth-child(5)){
-  margin-bottom: 5%;
-}
+       
+        font-size: 90%;
+        padding-top: 5%;
+        padding-bottom: 12%;
+      }
 
-.nav_wrapper h3:active{
-    color: #EEEBDD;
-    background-color: #810000;
-    border-radius: 5px;
-    padding: 1%;
-   
-}
-
-
-
-
-.nav_wrapper.click{
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.menu_logo.click::before{
-    transform: translateY(200%) rotate(45deg);
-}
-
-.menu_logo.click::after{
-    transform: translateY(-200%) rotate(-45deg);
-}
-
-.menu_logo.click:nth-child(1){
-    background-color: transparent;
-}
-/*------------------*/
-  
 }
 
 /* Tablets (601px to 992px) */
-@media only screen and (min-width: 601px) and (max-width: 1024px) and (orientation: portrait) {
+@media  screen and (min-width: 768px) and (max-width: 1024px)   {
   
     body{
         height: 200vh;
         overflow-y: auto;
-        background-color: yellow;
-      
+        background-color: yellow; 
     }
-    
     
     .container_wrapper{
         height: 100%;
@@ -421,103 +397,58 @@ nav button{
         place-content: center;
         place-items: center;
         position: relative;
-       
+        z-index: 0;
+        padding: 0;
+        margin: 0;
     }
+
     .contact_wrapper{
         flex-direction: column-reverse;
     }
-    .left_container{
-       
+
+    .left_container{   
         width: 100%;
-        border-radius: 0 0 30px 30px;
-       
+        border-radius: 0 0 30px 30px; 
     }
-    
     
     .right_container{
         width: 100%;
-    
     }
 
-        /*Nav*/
+    #contact_form input[type="submit"]{
+        width: 25%;
+        border-radius: 30px;  
+    }
+   
+    
+   
+   
+   }
 
-        nav button{
-            top: 2.5%;
-            width: 18%;
-            height: 5%;
-            border-radius: 10px;
-        }
-    
-        /*Hamburger menu*/
-    
-    
-    .logo_wrapper{
-        display: none;
-    }
-    
-    .menu_logo{
-        display: block;
-    }
-    
-    .menu_logo_wrapper{
-        width: 8%;
-    }
-    
-    
-    .nav_wrapper{
-        position: absolute;
-        flex-direction: column;
-        top: 0;
-    
-        height: 100vh;
-        width: 100vw;
+   @media  screen and (min-width: 768px) and (max-width: 1024px)  and  (orientation:landscape) {
+    .right_container form {
+        width: 50%;
+
        
-        background-color: var(--nav-header--);
-        left: -100%;
-        transition: .3s ease-in-out;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .nav_wrapper :not(:nth-child(5)){
-        margin-bottom: 5%;
-      }
       
-      .nav_wrapper h3:active{
-          color: #EEEBDD;
-          background-color: #810000;
-          border-radius: 5px;
-          padding: 1%;
-         
+    }
+    .social{
+        height: 15%;
+    }
+
+    .social h3{
+        font-size: 4vh;
+
+    }
+
+    #contact_form input[type="submit"]{
+        width: 25%;
+       
+
+       
+        font-size: 85%;
       }
-    
-    .nav_wrapper.click{
-        transition: .3s ease-in-out;
-        left: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .menu_logo.click::before{
-        transform: translateY(200%) rotate(45deg);
-    }
-    
-    .menu_logo.click::after{
-        transform: translateY(-200%) rotate(-45deg);
-    }
-    
-    .menu_logo.click:nth-child(1){
-        background-color: transparent;
-    }
-    /*------------------*/
-    
-   
-   
+  
    }
 
-   @media only screen and (min-width: 601px) and  (max-width: 1024px) and (orientation: portrait) {
 
-
-   }

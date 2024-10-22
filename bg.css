@@ -1,0 +1,121 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.bg_wrapper{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+
+    background-color: aqua;
+    top: 0;
+    overflow: hidden;
+    
+    
+}
+
+#leftcontainer{
+    position: absolute;
+    width: 80%;
+    bottom: 15%;
+    z-index: 3;
+    overflow: hidden;
+}
+
+#leftgrass{
+    position: absolute;
+    width: 25%;
+    bottom: 0;
+    z-index: 4;
+    overflow: hidden;
+}
+#rightcontainer{
+    position: absolute;
+    width: 65vw;
+    bottom: 15%;
+    z-index: 2;
+    right: 0;
+    overflow: hidden;
+    
+}
+
+#rightgrass{
+    position: absolute;
+    width: 25%;
+    bottom: 0;
+    right: 0;
+    z-index: 4;
+    overflow: hidden;
+    
+}
+
+
+#water{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+}
+
+#waterreflect{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+}
+
+#Shrine{
+    width: 40%;
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+ 
+   
+    z-index: 5;
+}
+
+footer{
+    background-color: blue;
+    margin: 0;
+    padding:0;
+    height: 15%;
+    width: 100%;
+    z-index: 5;
+ 
+}
+
+
+
+@media  screen and (max-width: 767px) and (orientation:portrait) {
+
+    #rightcontainer{
+        bottom: 4%;
+    }
+
+    #leftcontainer{
+        bottom: 4%;
+    }
+
+
+}
+
+@media  screen and (min-width: 768px) and (max-width: 1024px) and (orientation:portrait) {
+    
+    #rightcontainer{
+        bottom: 5%;
+    }
+
+    #leftcontainer{
+        bottom: 5%;
+    }
+
+ 
+
+}

@@ -131,6 +131,7 @@ ul li a:hover{
     color: #1B1717;
     margin-bottom: 2rem;
     animation: transitionIn 0.60s;
+    text-align: justify;
 }
 
 .order-now {
