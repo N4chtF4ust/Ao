@@ -20,6 +20,7 @@ body{
 
     display: flex;
     font-family: "Open Sans", sans-serif;
+    overflow-x: hidden;
  
 
 }
@@ -75,8 +76,8 @@ nav button{
     top: 3%;
     left: 5%;
     z-index: 3;
-    width: 4vh;
-    height: 4vh;
+    width: 30px;
+    height: 30px;
     position: relative;
  
     display: flex;
