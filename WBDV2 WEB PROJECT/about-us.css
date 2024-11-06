@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #EEEBDD;
+}
+
+/*...................NAVIGATION CSS................... */
+
+nav{
+    background-color:#EEEBDD;
+    width: 100%;
+    height: 10%;
+    position: fixed;
+    z-index: 11;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #810000;
+    box-shadow: 0 0 5px black;
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  .logo_wrapper{
+    width: 4%;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    margin-left: 5%;
+   
+  }
+  
+  .logo_wrapper img{
+  width: 100%;
+  }
+  
+  nav button{ 
+   margin-right: 3%;
+    width: 8%;
+    height: 50%;
+    border-radius: 15px;
+    border: none;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bolder;
+    color: #EEEBDD;
+    font-size: 2vmin;
+    text-wrap: nowrap;
+    background-color: #810000;
+    cursor: pointer; 
+  }
+  
+  .menu_logo_wrapper{
+    top: 3%;
+    left: 5%;
+    z-index: 3;
+    width: 4vh;
+    height: 4vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+  }
+  
+  .menu_logo{
+    display: none; 
+  }
+  
+  .menu_logo.click::before,.menu_logo.click::after{
+    transition:  .3s ease-in-out;
+  }
+  
+  .menu_logo,.menu_logo::before,.menu_logo::after{
+    border-radius: 15px;
+  }
+  
+  .menu_logo{
+    width: 100%;
+    height: 20%;
+    background-color: #810000;
+    z-index: 3;
+  }
+  
+  .menu_logo::before{
+    top: 0;
+    content: "";
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    background-color: #810000;
+  }
+  
+  .menu_logo::after{
+    bottom: 0;
+    content: "";
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    background-color: #810000;
+  }
+  
+  .nav_wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    height: 50%;
+    font-weight: bolder;
+    align-items: center;
+    font-size: 1.5vmin;
+    text-wrap: nowrap;
+    z-index: 2; 
+  }
+  
+  .nav_wrapper h3{
+    margin: 0;
+    padding: 0;
+    cursor: pointer;  
+  }
+  
+  .nav_wrapper h3{
+    transition: .3s ease-in-out;
+  }
+  
+  .nav_wrapper h3:hover{
+    color: #EEEBDD;
+    background-color: #810000;
+    padding: 1%;
+    border-radius: 10px; 
+  }
+  
+  /*..................................... */
+
+
+.about{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: transitionIn 0.60s;
+}
+
+.about .main img{
+   margin-top:40PX ;
+   width: 680px;
+   max-width: 100%;
+   height: auto;
+   padding: 0 10px; 
+}
+
+.all-text{
+   width: 600px;
+   max-width: 100%;
+   padding: 0 10px; 
+}
+
+.main{
+    width: 1290px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.all-text h1{
+    font-family: "Ubuntu", sans-serif;
+    font-size: 3rem;
+    color: #1B1717;
+    margin-bottom: 20px;
+}
+
+.all-text p{
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    color: #1B1717;
+    line-height: 30px;
+    margin-bottom: 35px;
+}
+
+@media (width < 750px){
+    .about .main img{
+        margin-top: 50%;
+        margin-bottom: 35px;
+    }
+
+    .all-rext h1{
+        font-size: 45px;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 767px)  {
+
+    /*Nav*/
+    nav button{
+        width: 20%;
+        border-radius: 10px;
+       
+    }
+    
+    
+    /*Hamburger menu*/
+    .logo_wrapper{
+    display: none;
+    }
+    .menu_logo{
+        display: block;
+    }
+    
+    .nav_wrapper{
+        position: absolute;
+        flex-direction: column;
+        top: 0;
+        height: 100vh;
+        width: 100vw;
+        
+        background-color: #EEEBDD;
+        transition: .3s ease-in-out;
+        left: -150%;
+        justify-content: center;
+        align-items: center;
+        font-size: 3vmin;
+        
+    }
+    
+    .nav_wrapper :not(:nth-child(5)){
+      margin-bottom: 5%;
+    }
+    
+    .nav_wrapper h3:active{
+        color: #EEEBDD;
+        background-color: #810000;
+        border-radius: 5px;
+        padding: 1%;
+       
+    }
+    
+    .nav_wrapper.click{
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .menu_logo.click::before{
+        transform: translateY(200%) rotate(45deg);
+    }
+    
+    .menu_logo.click::after{
+        transform: translateY(-200%) rotate(-45deg);
+    }
+    
+    .menu_logo.click:nth-child(1){
+        background-color: #EEEBDD;
+    }
+    /*------------------*/
+      
+    
+    }
+    
+    /*Phone Landscape*/
+    
+    @media  screen and (max-width: 767px) and (orientation:landscape){
+        /*Nav*/
+        nav{
+            height: 15%;
+        }
+        
+        nav button{
+            width: 10%;
+            border-radius: 10px;
+        }
+    
+        /*-----------*/
+    
+        .review_wrapper{
+            height: 80%;
+        }
+    
+        .review_content{
+            width: 25%;
+        }
+    
+    }
+    
+    
+    
+    /*Mobile view*/
+    
+    @media screen and (min-width: 768px) and  (max-width: 1024px)  {
+   
+    .logo_wrapper{
+     display: none;
+    }
+    
+    .menu_logo{
+        display: block;
+    }
+    
+    .menu_logo_wrapper{
+        width: 6%;
+    }
+    
+    
+    .nav_wrapper{
+        position: absolute;
+        flex-direction: column;
+        top: 0;
+    
+        height: 100vh;
+        width: 100vw;
+       
+        background-color: var(--nav-header--);
+        left: -150%;
+        transition: .3s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .nav_wrapper :not(:nth-child(5)){
+        margin-bottom: 5%;
+      }
+      
+      .nav_wrapper h3:active{
+          color: #EEEBDD;
+          background-color: #810000;
+          border-radius: 5px;
+          padding: 1%;
+         
+      }
+    
+    .nav_wrapper.click{
+        transition: .3s ease-in-out;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .menu_logo.click::before{
+        transform: translateY(200%) rotate(45deg);
+    }
+    
+    .menu_logo.click::after{
+        transform: translateY(-200%) rotate(-45deg);
+    }
+    
+    .menu_logo.click:nth-child(1){
+        background-color: #EEEBDD;
+    }
+    
+    }
+  
