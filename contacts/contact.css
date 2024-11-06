@@ -208,8 +208,11 @@ nav button{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
     align-items: center;
     position: relative;
+    overflow-y: auto;
+   
 
 }
 
@@ -218,55 +221,40 @@ nav button{
 }
 
 .right_container h1{
-   
     top: 5%;
     font-family: "Ubuntu", sans-serif;
     font-size: 200%;
-    
     margin-top: 5%;
     color: var(--nav-header--);
-    
-
 
 }
 .right_container form{
- 
-   
-    
-   
     width: 80%;
     height: 60%;
     display: flex;
     flex-direction: column;
-  
     align-self: flex-start;
     justify-content: space-between;
     position: relative;
     left: 5%;
     font-weight: bolder;
     color: var(--nav-header--);
-  
-
-    
+    overflow-y: auto;
+    padding: 1%;
 }
 
 .right_container form input:not(input[type="submit"]){
     width: 48%;
     height: 10%;
     border-radius: 10px;
- border: none;
+    border: none;
     padding-left: 2%;
     padding: 1.3%;
-
-    
-
-  
 }
 
 .right_container form input:focus{
     outline-color: var(--background_color_left_container--);
     color: var(--background_color_left_container--);
-  
 }
 
 .right_container form input[type="submit"]{
@@ -275,7 +263,6 @@ nav button{
     background-position:calc(15%);
     background-size: 15%;
     color: #EEEBDD;
-   
     padding-left: 2.5%;
     font-weight: bolder ;
     background-color:var(--menu-logo--);
@@ -284,11 +271,8 @@ nav button{
     border-radius: 20px;
     display: block;
     font-size: 90%;
-    
     border: none;
-   
 }
-
 
 #Messages{
     height: 50%;
@@ -303,7 +287,7 @@ nav button{
 
 .social{
     position: relative;
-    bottom: 1%;
+
     width: 100%;
     height: 20%;
     text-align: center;
@@ -311,6 +295,8 @@ nav button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    align-self: flex-end;
+
     color: var(--nav-header--);
 }
 
@@ -359,6 +345,8 @@ body{
 
 .right_container{
     width: 100%;
+
+ 
 }
 
 /*Nav*/
@@ -422,6 +410,8 @@ display: none;
 .menu_logo.click:nth-child(1){
     background-color: transparent;
 }
+
+
 /*------------------*/
 }
 
@@ -431,6 +421,7 @@ display: none;
 /*Nav*/
     nav{
             height: 15%;
+      
         }
         
     nav button{
@@ -458,6 +449,11 @@ display: none;
         padding-top: 5%;
         padding-bottom: 12%;
       }
+
+      .menu_logo_wrapper{
+        width: 25px;
+        height: 25px;
+       }
 
 }
 
@@ -502,7 +498,11 @@ display: none;
 
 
 
+
+
     /*Hamburger menu*/
+
+
 
 
 .logo_wrapper{
@@ -513,9 +513,7 @@ display: none;
        display: block;
    }
    
-   .menu_logo_wrapper{
-       width: 6%;
-   }
+
    
    
    .nav_wrapper{
