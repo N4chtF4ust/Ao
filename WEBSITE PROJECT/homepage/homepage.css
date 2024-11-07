@@ -315,9 +315,12 @@ nav button{
 
 .bg_wrapper{
     width: 100vw;
-    top: 0;
+    height: 100%;
+    bottom: 0;
     overflow: hidden;
-    opacity: 20%; 
+
+    opacity: 20%;
+    position: fixed; 
 }
 
 #leftcontainer{
