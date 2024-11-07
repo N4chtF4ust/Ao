@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Slideshow</title>
+  <style>
+    
+    
+   * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.slideshow-container {
+  display: flex;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.slide {
+  min-width: 100%;
+  transition: transform 0.5s ease-in-out;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.product-info {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  width: 80%;
+}
+
+.product-info h3 {
+  margin: 5px 0;
+}
+
+.price {
+  margin-top: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Sa Mobile*/
+@media (max-width: 480px) {
+  .slideshow-container {
+    width: 100%;
+  }
+
+  .slide {
+    min-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slide img {
+    width: 45%;
+    height: 80%;
+  }
+
+  .product-info {
+    width: 40%;
+    font-size: 0.8em;
+    padding: 6px;
+    bottom: 20px;
+  }
+
+  .product-info h3 {
+    font-size: 1em;
+  }
+
+  .price {
+    font-size: 0.9em;
+  }
+}
+
+/*Sa Tablets and iPads*/
+@media (min-width: 481px) and (max-width: 1023px) {
+  .slideshow-container {
+    width: 100%;
+  }
+
+  .slide {
+    min-width: 50%;
+  }
+
+  .slide img {
+    width: 85%;
+    height: 90%;
+  }
+
+  .product-info {
+    width: 50%;
+    bottom: 15px;
+  }
+
+  .product-info h3 {
+    font-size: 1em;
+  }
+
+  .price {
+    font-size: 0.9em;
+  }
+}
+
+/* Sa iPad Pro */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .slideshow-container {
+    width: 100%;
+  }
+
+  .slide {
+    min-width: 50%;
+  }
+
+  .slide img {
+    width: 85%;
+    height: 90%;
+  }
+
+  .product-info {
+    width: 50%;
+    bottom: 15px;
+  }
+
+  .product-info h3 {
+    font-size: 1em;
+  }
+
+  .price {
+    font-size: 0.9em;
+  }
+}
+
+/* Sa Nest Hub and Nest Hub Max*/
+@media (min-width: 1024px) and (max-width: 1367px) {
+  .slideshow-container {
+    width: 100%;
+  }
+
+  .slide {
+    min-width: 20%;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .product-info {
+    width: 100%;
+    bottom: 10px;
+  }
+
+  .product-info h3 {
+    font-size: 1em;
+  }
+
+  .price {
+    font-size: 1em;
+  }
+}
+
+/* Sa Desktop */
+@media (min-width: 1367px) {
+  .slideshow-container {
+    width: 80%;
+    max-width: 1200px;
+  }
+
+  .slide {
+    min-width: 20%;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slideshow-container .slide:nth-child(3) {
+    transform: scale(1);
+    z-index: 1;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+}
+
+
+    
+    
+  </style>
+</head>
+<body>
+  <div class="slideshow-container">
+    <!-- Slide 1 -->
+    <div class="slide">
+      <img src="Ramen.jpeg" alt="Product 1">
+      <div class="product-info">
+        <h3>Product 1</h3>
+        <p class="price">PHP29.99</p>
+      </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="slide">
+      <img src="Ramen.jpeg" alt="Product 2">
+      <div class="product-info">
+        <h3>Product 2</h3>
+        <p class="price">PHP49.99</p>
+      </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="slide">
+      <img src="Ramen.jpeg" alt="Product 3">
+      <div class="product-info">
+        <h3>Product 3</h3>
+        <p class="price">PHP19.99</p>
+      </div>
+    </div>
+    <!-- Slide 4 -->
+    <div class="slide">
+      <img src="Ramen.jpeg" alt="Product 4">
+      <div class="product-info">
+        <h3>Product 4</h3>
+        <p class="price">PHP39.99</p>
+      </div>
+    </div>
+    <!-- Slide 5 -->
+    <div class="slide">
+      <img src="Ramen.jpeg" alt="Product 5">
+      <div class="product-info">
+        <h3>Product 5</h3>
+        <p class="price">PHP59.99</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let index = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    function showSlides() {
+      slides.forEach((slide, idx) => {
+        slide.style.transform = `translateX(-${index * 100}%)`;
+      });
+
+      index++;
+
+      if (index >= totalSlides) {
+        index = 0;
+      }
+    }
+     /*sa transition to*/
+    setInterval(showSlides, 3000);
+  </script>
+</body>
+</html>
