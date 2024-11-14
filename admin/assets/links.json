@@ -1,0 +1,7 @@
+{
+       "path1":"../accountsAdmin/accounts_admin.html",
+       "path2":"../productAdmin/product_admin.html",
+       "path3":"../staffsAdmin/staffs_admin.html",
+       "path4":"../transactionsAdmin/transactions_admin.html",
+       "path5":"../settingsAdmin/settings_admin.html"
+}
