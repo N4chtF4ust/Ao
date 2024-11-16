@@ -1,0 +1,17 @@
+.edit_wrapper{
+    background-color: var(--nav-bg-color--);
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    display: grid;
+    place-items: center;
+    border: 1px solid black;
+    top: 0;
+    left: 0;
+    transform: translate(70%,50%);
+    overflow: hidden;
+}
+
+.edit_wrapper > div{
+    background-color: pink;
+}

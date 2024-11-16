@@ -19,7 +19,8 @@ body{
     width: 100vw;
     display: flex;
     font-family: "Open Sans", sans-serif;
-  
+    overflow: hidden;
+    
 }
 
 nav{
@@ -93,7 +94,8 @@ main{
     height: 100%;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    
+    overflow-y: scroll;
 }
 
 .page_title{
@@ -108,7 +110,119 @@ main{
     height: 95%;
     width: 100%;
 
+
+
 }
+
+.content_wrapper form{
+    width: 100%;
+    display: flex;
+   
+ 
+    justify-content: space-evenly;
+    align-items: center;
+    height: 10%;
+    
+
+}
+
+.content_wrapper form input{
+    outline: none;
+    border: none;
+  
+}
+
+.content_wrapper form > div{
+    width: 18%;
+    height: 80%;
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    background-color: var(--nav-button-bgcolor--);
+    color: var(--nav-bg-color--);
+    padding: 1%;
+}
+
+.content_wrapper form > div:last-child{
+    justify-content: center;
+    background-color:transparent;
+}
+
+.content_wrapper form > div label{
+    font-size: 100%
+}
+
+.content_wrapper form > div input[type="submit"]{
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+    padding: 0;
+    margin: 0;
+    background-color: var(--nav-button-bgcolor--);
+    color: var(--nav-bg-color--);
+}
+
+table{
+    width: 100%;
+    height: 30%;
+    text-wrap: nowrap;
+    font-size: 20px;
+    text-align: center;
+    border-collapse: collapse;
+    border-color: var(--nav-button-bgcolor--); 
+    color: var(--nav-button-bgcolor--);
+   
+  
+}
+
+table tr td{
+    width: 10%;
+}
+
+table tr td form{
+    background-color: yellow;
+   
+    
+}
+
+form.button{
+    width: 100%;
+    height: 20%;
+   
+    place-self: center;
+    
+}
+
+
+.button button{
+    height: 100%;
+    
+
+}
+
+table tr td form  button{
+    width: 80%;
+    font-size: 100%;
+    height: 20%;
+    background-color: var(--nav-button-bgcolor--);
+    color: var(--nav-bg-color--);
+    border: none;
+    border-radius: 10px;
+
+}
+
+table img{
+    width: 50%;
+}
+
+
+#edit > div{
+    width: 80%;
+
+}
+
+
+
 /* Phone*/
 
 @media screen and (max-width: 767px) {
@@ -128,6 +242,32 @@ main{
      .page_title h1{
         font-size: 100%;
      }
+
+     .content_wrapper form{
+        flex-direction: column;
+        height: 50%;
+     }
+
+     .content_wrapper form > div{
+        width: 80%;
+        height: 15%;
+        border-radius: 3px;
+     }
+
+     .content_wrapper form > div label{
+        font-size: 80%
+    }
+    table{
+        font-size: 10px;
+    }
+
+    table tr td  button{
+        
+  
+        font-size: 50%;
+       
+    
+    }
 }
 
 /* Phone landscape*/
@@ -136,6 +276,11 @@ main{
 
 nav > :first-child img{
     width: 30%;
+}
+
+.content_wrapper form{
+   
+    height: 80%;
 }
 }
 /* Tablet*/
@@ -156,6 +301,24 @@ nav > :first-child img{
      .page_title h1{
         font-size: 100%;
      }
+
+     .content_wrapper form{
+        flex-direction: column;
+        height: 50%;
+     }
+
+     .content_wrapper form > div{
+        width: 80%;
+        height: 15%;
+        border-radius: 3px;
+     }
+
+     .content_wrapper form > div label{
+        font-size: 80%
+    }
+    table{
+        font-size: 10px;
+    }
 }
 
 /* Tablet landscape*/
