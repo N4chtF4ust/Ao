@@ -249,11 +249,32 @@
                    
                    
                  }
-            
+
+             
+      //     echo "<div class='table_option'>
+//
+      //            <h3>Select Table</h3>
+      //             
+      //             <select  id='choices' onchange='displayChoice(this)'>
+      //                  <option value='choice1' selected>Must Try</option>
+      //                  <option value='choice2'>Starters</option>
+      //                  <option value='choice3'>Japanese</option>
+      //                  <option value='choice4'>Korean</option>
+      //                  <option value='choice5'>Ramen</option>
+      //                  <option value='choice6'>Chinese/Filipino</option>
+      //                  <option value='choice7'>Rice</option>
+      //                  <option value='choice8'>Soup</option>
+      //                  <option value='choice9'>Desserts</option>
+      //                  <option value='choice10'>Drinks</option>
+      //             </select>
+//
+      //          </div>";
+      //     
+          
          
             for ($i=1; $i <=10 ; $i++) { 
              
-                echo "<table border='2'>
+                echo "<table border='2' >
                     <tr>
                     <th colspan='6'>";
                 echo $product_json['choice' . $i];
