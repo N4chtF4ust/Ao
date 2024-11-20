@@ -127,9 +127,18 @@ main{
 
 }
 
+.option_wrapper select{ 
+    background-color: var(--nav-bg-color--);
+    color: var(--nav-button-bgcolor--);
+    font-weight: bolder;
+    border-radius: 20px;
+
+}
+
 .content_wrapper form input{
     outline: none;
     border: none;
+    background-color: var(--nav-bg-color--);
   
 }
 
@@ -202,27 +211,33 @@ table tr:first-child th:first-child{
     align-items: center;
 }
 
+
+
 table tr td{
-    width: 10%;
+ 
+ 
   
     color: black;
     position: relative;
     
 }
 
-table tr td form{
-    background-color: yellow;
-    
-   
-   
-    
+table tr th{
+    width: 14.3%;
 }
 
 
 
 
+
+
 .button button{
-    height: 100%;
+    height: 30%;
+    width: 80%;
+    position: absolute;
+    font-weight: bolder;
+    border-radius: 30px;
+    max-height: 38px;
   
     
 
@@ -311,6 +326,12 @@ table img{
        
     
     }
+
+    .button button{
+        border-radius: 10px;
+        font-size: 70%;
+        height: 20%;
+    }
 }
 
 /* Phone landscape*/
@@ -361,6 +382,12 @@ nav > :first-child img{
     }
     table{
         font-size: 10px;
+    }
+
+    .button button{
+        border-radius: 15px;
+        font-size: 70%;
+        height: 15%;
     }
 }
 

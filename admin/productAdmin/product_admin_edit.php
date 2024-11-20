@@ -1,38 +1,45 @@
 <?php
     include '..\assets\connect.php';
+
     include 'product_admin.php';
-    $edit_list_array=[];
+
+    
 
     $json_data = file_get_contents('../assets/product.json');
-
+   
     // Decode the JSON data
     $product_json = json_decode($json_data, true); // Use 'true' to return an associative array
-
-
-  
-
+   
+   
+   
+   
     $jsonFilePath = '../assets/edit_list.json';
-  
+
+    $edit_list_array=[];
+   
     if (file_exists($jsonFilePath)) {
         // Read the existing JSON data
         $jsonData = file_get_contents($jsonFilePath);
         $productList = json_decode($jsonData, true);  // Decode JSON into associative array
         $decodeproductList = json_encode($productList);
-
+   
      //   echo "<script>console.log($decodeproductList)</script>";
-        foreach ($productList as $row) {
+        foreach ($productList as $key) {
        
-
-            foreach ($row as $col ){
-                $y = json_encode($col);
+   
+            foreach ($key as $val ){
+                $y = json_encode($val);
                 $modifiedString = substr($y, 1, -1);
                 $edit_list_array[] = $modifiedString;
                 
                 //echo "<script>console.log($y)</script>";
               }
-
+   
            
           }
+    }
+    
+   
 
           if(isset($_POST["save"])){
             $productname = $_POST["product_name"];
@@ -82,7 +89,7 @@
    
 
 
-    }
+    
 ?>
 
 <link rel="stylesheet" href="product_admin_edit.css">

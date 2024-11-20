@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/tab-icon/logo.ico">
+    <link rel="stylesheet" href="about.css">
+    <script src="about.js" defer></script>
+    <title>AO Japanese Cuisine</title>
+</head>
+<body>
+
+    <nav>
+        <div class="logo_wrapper">
+            <img src="..\product\product-asset\logo_processed.png" alt="">
+        </div>
+        
+        <div class="menu_logo_wrapper" onclick="menu_click(document.getElementById('nav_wrapper'),document.getElementById('menu_logo'))">
+            <div class="menu_logo" id="menu_logo"></div>
+            <div class="menu_logo_center" id="menu_logo_center"></div>
+        </div>
+
+        <div class="nav_wrapper" id="nav_wrapper">
+            <h3 onclick="window.location.href='../homepage/homepage.html'">Home</h3>
+            <h3 onclick="window.location.href='../about/about.html'">About Us</h3>
+            <h3 onclick="window.location.href='../product/product.html'">Products</h3>
+            <h3 onclick="window.location.href='../contacts/contact.html'">Contacts</h3>
+           
+        </div>
+
+      <img src="..\product\product-asset\cart.svg" alt=""  id="cart" onclick="toggleCart(document.getElementById('cart_wrapper'))">
+        <button>Back</button>
+    </nav>
+
+    <section class="about">
+        <div class="main">
+            <img src="about-assets/AoPlace.jpg"> 
+            <div class="all-text">
+                <h1>About Us</h1>
+                <p>Lorem ipsum dolor sit amet. Id dignissimos dolore vel quis officiis qui 
+                    aliquid consequatur ea libero earum quo animi ipsa ut commodi sint id 
+                    voluptates quibusdam. Est repudiandae nisi ut exercitationem odit est 
+                    dolores adipisci 33 sequi soluta nam blanditiis ipsa non blanditiis 
+                    consectetur in illo blanditiis? Sed voluptas blanditiis ut accusantium 
+                    repudiandae ut animi dolores sit obcaecati repudiandae ea ullam facilis 
+                    sed ducimus amet. Ut facilis magnam et quos quos in ipsam fuga.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    
+    <div class="cart_wrapper" id="cart_wrapper">
+        <button id="cart_buy">Buy</button>
+    </div>
+    
+</body>
+
+
+</html>

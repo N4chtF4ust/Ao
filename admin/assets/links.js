@@ -1,10 +1,10 @@
 
-function redirect(a){
+function redirect(path){
     fetch('../assets/links.json')
 
     
     .then(response => {
-        // Check if the response is okay (status 200-299)
+        // Check if the response is okay 
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -18,19 +18,17 @@ function redirect(a){
             const navElement = document.querySelector('nav');
 
             // Get all child div elements inside the nav
-            const allChildDivs = Array.from(navElement.children); // Convert HTMLCollection to Array
+            const allChildDivs = Array.from(navElement.children); 
             
             // Find the index of the clicked element
-            const index = allChildDivs.indexOf(a);
-            
-            console.log(data[`path${index}`]);
-            
-       
+            const index = allChildDivs.indexOf(path);
 
+            console.log('index of child ='+ index);
+            
+            console.log('The path is: '+ data[`path${index}`]);
+            ``
             window.location.href = data[`path${index}`];
             
-        
-        
             
         });
  
@@ -41,3 +39,5 @@ function redirect(a){
     
 
 }
+
+

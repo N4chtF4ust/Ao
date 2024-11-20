@@ -1,0 +1,7 @@
+{
+       "path1":"../accountsAdmin/accounts_admin.php",
+       "path2":"../productAdmin/product_admin.php",
+       "path3":"../staffsAdmin/staffs_admin.php",
+       "path4":"../transactionsAdmin/transactions_admin.php",
+       "path5":"../settingsAdmin/settings_admin.php"
+}

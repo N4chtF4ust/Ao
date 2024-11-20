@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ao Restaurant</title>
+<link rel="stylesheet" href="signin_signup.css">
+<link rel="icon" href="../homepage_photo/logo.png" type="image/x-icon">
+<script src="signin_signup.js" defer></script>
+
+</head>
+<body>
+  <div class="homepage">
+          <div class="right_container" id="right_container">
+
+            <div id="sign_in">
+              <img src="../homepage_photo/logo.png" alt="" id="logo">
+              <h1>Sign In</h1>
+              <form action="" method="post">
+                <div id="username-wrapper" class="outline">
+                  <input type="text" id="sign_in_email" name="signup-username" placeholder="Enter email" style="order: 2" >
+                  <label for="sign_in_email" id="placehold"></label>
+                  <div id="logo_user" style="order: 1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80%" height="80%" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                    </svg>
+                  </div>
+                 
+                </div>
+
+                <div id="password-wrapper" class="outline">
+                  <input type="password" id="password1" name="password" placeholder="Enter password" style="order: 2">
+                  <label for="password1" id="placehold" ></label>
+
+                  <div id="eye" style="order: 3">
+                  
+                    <img src="..\homepage_photo\eye-fill.svg" id="img_eye1" alt="" onclick="eye(document.getElementById('password1'),this)">
+             
+                  </div>
+                 
+                  <div id="logo_pass" style="order: 1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80%" height="80%" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16">
+                      <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2M2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                    </svg>
+                  </div>
+                </div>
+                <div id="forgot_pass_wrapper">
+                  <h4 onclick="window.location.href='forgotpass.com'" id="forgot_pass">Forgot Password?</h4>
+                </div>              
+                <input type="submit" value = "Sign in">
+              </form>
+
+              <div id="or_create_acc_wrapper">
+                <div id="or_wrapper">
+                  <h3>or</h3>
+                </div> 
+                <div id="create_acc_wrapper">
+                  <h4 onclick="toggle_signup(document.getElementById('sign_in'),document.getElementById('sign_up'))">Create an Account</h4> 
+                  
+                </div>   
+              </div>
+
+              <div id="form_lower_wrapper">            
+              </div>       
+            </div>
+
+            <div id="sign_up">
+              <img src="../homepage_photo/logo.png" alt="" id="logo">
+              <h1>Sign up</h1>
+              <form action="" method="post">
+
+                <div id="full-name-wrapper" >
+                  <input type="text" id="firstname" name="firstname" placeholder="Enter firstname" class="outline" style="padding-left: 5%;">
+                  <label for="firstname" id="placehold"></label>
+                  <input type="text" id="lastname" name="lasttname" placeholder="Enter lasttname" class="outline"  style="padding-left: 5%;"> 
+                  <label for="lastname" id="placehold"></label>
+                </div>
+
+                <div id="signup-email-wrapper" class="outline">
+                  <input type="text" id="signup-email" name="signup-email" placeholder="Enter email" style="order: 2" >
+                  <label for="signup-email" id="placehold"></label>
+                  <div id="logo_user" style="order: 1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="70%" height="70%" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                    </svg>
+                  </div> 
+                </div>
+
+                <div id="signup-contact-wrapper" class="outline">
+                  <input type="tel" id="signup-contact" name="signup-contact" placeholder="Enter contact" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" style="order: 2" >
+                  <label for="signup-contact" id="placehold"></label>
+
+                  <div id="logo_user" style="order: 1">
+                    <svg id="logo_contact" xmlns="http://www.w3.org/2000/svg" width="60%" height="60%" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                    </svg>
+                  </div>
+             
+                </div>
+
+                  <div id="signup-password-wrapper" class="outline">
+
+                    <input type="password" id="password2" name="password2" placeholder="Enter password" style="order: 2">
+                    <label for="password2" id="placehold" ></label>
+
+                   <div id="eye" style="order: 3">
+                     <img src="..\homepage_photo\eye-fill.svg" id="img_eye2" alt="" onclick="eye(document.getElementById('password2'),this)">
+                   </div>
+                 
+                  <div id="logo_pass" style="order: 1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="70%" height="70%" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16">
+                      <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2M2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                    </svg>
+                  </div>
+
+                </div>
+
+                <div id="signup-re-enter-password-wrapper" class="outline">
+                    <input type="password" id="password3" name="password3" placeholder="Re-enter password" style="order: 2">
+                    <label for="password3" id="placehold" ></label>
+
+                  <div id="eye" style="order: 3">                
+                    <img src="..\homepage_photo\eye-fill.svg" id="img_eye3" alt="" onclick="eye(document.getElementById('password3'),this)">          
+                  </div>
+                 
+                  <div id="logo_pass" style="order: 1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="70%" height="70%" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16">
+                      <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2M2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                    </svg>
+                  </div>
+                  
+                </div>
+
+                <input type="submit" value = "Create an Account">
+                
+              </form>
+
+              <div id="or_sign_in_wrapper">
+                <div id="or_wrapper">
+                  <h3>or</h3>
+                </div> 
+                <div id="sign_in_wrapper">
+                  <h4 onclick="toggle_signup(document.getElementById('sign_up'),document.getElementById('sign_in'))">Sign in</h4>
+                </div>   
+              </div>
+             
+            </div>
+          </div>
+
+          
+
+          <div class="bg">
+                  <img src="..\homepage_photo\land.png" alt="land" id="land">
+                  <img src="..\homepage_photo\obj1.svg" alt="temple" id="obj1">
+                  <img src="..\homepage_photo\obj2.svg" alt="shinto" id="obj2">
+                  <img src="..\homepage_photo\obj3.svg" alt="temple" id="obj3">
+                  <img src="..\homepage_photo\obj4.svg" alt="temple" id="obj4">
+                  <img src="..\homepage_photo\Fujjjii.svg" alt="mountain" id="Mountain">
+                  <img src="..\homepage_photo\cloud1.svg" alt="cloud" id="cloud1">
+                  <img src="..\homepage_photo\cloud2.svg" alt="cloud" id="cloud2">
+                  <img src="..\homepage_photo\cloud3.svg" alt="cloud" id="cloud3">
+                  <img src="..\homepage_photo\moon.svg" alt="moon" id="moon">
+          </div>
+
+  </div>
+
+  <div class="Footer">
+    <p>&#169; 2024 AO Japanese Cuisine</p>
+  </div>
+  
+</body>
+</html>

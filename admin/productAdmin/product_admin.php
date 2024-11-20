@@ -1,10 +1,58 @@
 <?php
     include '..\assets\connect.php';
+ 
+
+    function jsoncrud($TABLE,$ID,$NAME,$PRICE,$IMAGEURL,$AVAILABILITY,$jsonFilePath){ 
+        
+        
+        // This function use to insert a value in json file
+        if (file_exists($jsonFilePath)) {
 
 
+            // Read the existing JSON data
+            $jsonData = file_get_contents($jsonFilePath);
+            $productList = json_decode($jsonData, true);  // Decode JSON into associative array
+    
+            // Flag to check if the product was updated
+            $updated = false;
+    
+            // Loop through the existing products and update the matching ID
+            foreach ($productList as &$product) {
+                    $product['TABLE'] = $TABLE; 
+                    $product['ID'] = $ID; 
+                    $product['NAME'] = $NAME;
+                    $product['PRICE'] = $PRICE;
+                    $product['IMAGEURL'] = $IMAGEURL;
+                    $product['AVAILABILITY'] = $AVAILABILITY;
+                    $updated = true;
+                    break;
+                
+            }
+    
+            // If the product was not found, add a new one
+            if (!$updated) {
+                $productList[] = [
+                    'TABLE' => $TABLE,
+                    'ID' => $ID,
+                    'NAME' => $NAME,
+                    'PRICE' => $PRICE,
+                    'IMAGEURL' => $IMAGEURL,
+                    'AVAILABILITY' => $IMAGEURL
+                ];
+            }
+    
+            // Save the updated product list back to the JSON file
+            $updatedJsonData = json_encode($productList, JSON_PRETTY_PRINT);
+            file_put_contents($jsonFilePath, $updatedJsonData);
 
+            
+
+    
+    
+  
+        }
+    }
    
-
     if(isset($_POST["submit"])){
         $productname = $_POST["product_name"];
         $productprice = $_POST["product_price"];
@@ -20,7 +68,7 @@
 
         if(in_array($ext, $allowedTypes)){
             if(move_uploaded_file($tempName, $targetPath)){
-                $query = "INSERT INTO $select (name, price, img) VALUES ('$productname', '$productprice', '$fileName')"; 
+                $query = "INSERT INTO $select (name, price,img,availability) VALUES ('$productname', '$productprice', '$fileName','Available')"; 
                 $add_product = mysqli_query($conn,$query);
 
                 if(!$add_product){
@@ -164,11 +212,47 @@
             $json_data = file_get_contents('../assets/product.json');
 
             // Decode the JSON data
-            $product_json = json_decode($json_data, true); // Use 'true' to return an associative array
+            $product_json = json_decode($json_data, true); // Use 'true' to return an associative array\\
+
+
+            $availability_list_array=[];
+
+            $jsonFilePath = '../assets/availability.json';
+   
+            if (file_exists($jsonFilePath)) {
+                // Read the existing JSON data
+                $jsonData = file_get_contents($jsonFilePath);
+                $productList = json_decode($jsonData, true);  // Decode JSON into associative array
+                $decodeproductList = json_encode($productList);
+           
+             //   echo "<script>console.log($decodeproductList)</script>";
+                foreach ($productList as $key) {
+               
+           
+                    foreach ($key as $val ){
+                        $y = json_encode($val);
+                        $modifiedString = substr($y, 1, -1);
+                        $availability_list_array[] = $modifiedString;
+                        
+                        //echo "<script>console.log($y)</script>";
+                      }
+           
+                   
+                  }
+            }
+            
+
+        
+
+         
+
+
+         
     
 
-            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit'])) {
+            if (isset($_POST['edit'])) {
                 // Declare global variables inside this block to use them
+                header('Location: product_admin_edit.php');
                
             
                 // Retrieve form data from POST request
@@ -177,6 +261,7 @@
                 $NAME = $_POST['NAME'];
                 $PRICE = $_POST['PRICE'];
                 $IMAGEURL = $_POST['IMAGEURL'];
+                $AVAILABILITY = $_POST['AVAILABILITY'];
               
             
               
@@ -188,46 +273,17 @@
                 echo "<script>console.log('Image URL: $IMAGEURL')</script>";
               
 
-                $jsonFilePath = '../assets/edit_list.json';
+                $jsonFilePath_edit = '../assets/edit_list.json';
 
-                if (file_exists($jsonFilePath)) {
-                    // Read the existing JSON data
-                    $jsonData = file_get_contents($jsonFilePath);
-                    $productList = json_decode($jsonData, true);  // Decode JSON into associative array
-            
-                    // Flag to check if the product was updated
-                    $updated = false;
-            
-                    // Loop through the existing products and update the matching ID
-                    foreach ($productList as &$product) {
-                            $product['TABLE'] = $TABLE; 
-                            $product['ID'] = $ID; 
-                            $product['NAME'] = $NAME;
-                            $product['PRICE'] = $PRICE;
-                            $product['IMAGEURL'] = $IMAGEURL;
-                            $updated = true;
-                            break;
-                        
-                    }
-            
-                    // If the product was not found, add a new one
-                    if (!$updated) {
-                        $productList[] = [
-                            'TABLE' => $TABLE,
-                            'ID' => $ID,
-                            'NAME' => $NAME,
-                            'PRICE' => $PRICE,
-                            'IMAGEURL' => $IMAGEURL
-                        ];
-                    }
-            
-                    // Save the updated product list back to the JSON file
-                    $updatedJsonData = json_encode($productList, JSON_PRETTY_PRINT);
-                    file_put_contents($jsonFilePath, $updatedJsonData);
-                    header('Location: '. 'product_admin_edit.php');
-            
-          
-                }
+                jsoncrud( $TABLE,
+                          $ID,
+                          $NAME,
+                          $PRICE,
+                          $IMAGEURL,
+                          $AVAILABILITY,
+                          $jsonFilePath_edit );
+
+             
                 
             }
             
@@ -251,32 +307,12 @@
                  }
 
              
-      //     echo "<div class='table_option'>
-//
-      //            <h3>Select Table</h3>
-      //             
-      //             <select  id='choices' onchange='displayChoice(this)'>
-      //                  <option value='choice1' selected>Must Try</option>
-      //                  <option value='choice2'>Starters</option>
-      //                  <option value='choice3'>Japanese</option>
-      //                  <option value='choice4'>Korean</option>
-      //                  <option value='choice5'>Ramen</option>
-      //                  <option value='choice6'>Chinese/Filipino</option>
-      //                  <option value='choice7'>Rice</option>
-      //                  <option value='choice8'>Soup</option>
-      //                  <option value='choice9'>Desserts</option>
-      //                  <option value='choice10'>Drinks</option>
-      //             </select>
-//
-      //          </div>";
-      //     
-          
          
             for ($i=1; $i <=10 ; $i++) { 
              
                 echo "<table border='2' >
                     <tr>
-                    <th colspan='6'>";
+                    <th colspan='7'>";
                 echo $product_json['choice' . $i];
                         
                 echo"</th>
@@ -303,6 +339,10 @@
                     <th>
                         Remove
                     </th>
+
+                     <th>
+                        Available
+                    </th>
                 </tr>";
 
                 $select_img = "SELECT * FROM choice$i";
@@ -315,6 +355,7 @@
                         $name = $row["name"];
                         $price = $row["price"];
                         $fileName = $row["img"];
+                        $availability = $row["availability"];
                         $imageUrl = "../assets/uploaded_img/".$fileName;
 
                         $array_imgname = $imageUrl;
@@ -334,6 +375,8 @@
                                     <input type='hidden' name='NAME' value='$name'>
                                     <input type='hidden' name='PRICE' value='$price'>
                                     <input type='hidden' name='IMAGEURL' value='$fileName'>
+                                    <input type='hidden' name='AVAILABILITY' value='$availability'>
+                                   
                                    
                                     <button type='submit' name='edit'> Edit </button>
 
@@ -344,6 +387,19 @@
                                     <input type='hidden' name='ImageUrl' value='$imageUrl'>
                                     <input type='hidden' name='id' value='$id'>
                                     <button name='delete' value ='$id'>Delete</button>
+                                </form>
+                            </td>
+
+                            <td>
+                                <form  method='POST' class='button' action='product_admin_delete.php'>
+                                    <input type='hidden' name='TABLE_AVAILABILITY' value='$i'>
+                                    <input type='hidden' name='ID_AVAILABILITY' value='$id'>
+                                    <input type='hidden' name='NAME_AVAILABILITY' value='$name'>
+                                    <input type='hidden' name='PRICE_AVAILABILITY' value='$price'>
+                                    <input type='hidden' name='IMAGEURL_AVAILABILITY' value='$fileName'>
+                                    <input type='hidden' name='availability_availability' value='$availability'>
+                                    
+                                    <button name='availability'>$availability</button>
                                 </form>
                             </td>
                         </tr>";
