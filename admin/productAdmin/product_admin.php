@@ -52,6 +52,40 @@
   
         }
     }
+
+    if ( $_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['availability'])) {
+
+        
+        $TABLE_AVAILABILITY= $_POST['TABLE_AVAILABILITY'];
+        $ID_AVAILABILITY = $_POST['ID_AVAILABILITY'];
+        $NAME_AVAILABILITY = $_POST['NAME_AVAILABILITY'];
+        $PRICE_AVAILABILITY = $_POST['PRICE_AVAILABILITY'];
+        $IMAGEURL_AVAILABILITY = $_POST['IMAGEURL_AVAILABILITY'];
+        $is_it_available = $_POST['availability_availability'];
+        $jsonFilePath_availability = '../assets/availability.json';
+
+     
+
+        jsoncrud( $TABLE_AVAILABILITY,
+                  $ID_AVAILABILITY,
+                  $NAME_AVAILABILITY,
+                  $PRICE_AVAILABILITY,
+                  $IMAGEURL_AVAILABILITY,
+                  $is_it_available,
+                  $jsonFilePath_availability );      
+                  
+                  
+        if($is_it_available === "Available"){
+            $is_it_available_txt = "Sold Out";
+            
+        }
+        else if ($is_it_available === "Sold Out"){
+            $is_it_available_txt = "Available";
+        }
+        $query = "UPDATE choice$TABLE_AVAILABILITY SET availability = '$is_it_available_txt' WHERE id=$ID_AVAILABILITY"; 
+        $add_product = mysqli_query($conn,$query);  
+
+    }
    
     if(isset($_POST["submit"])){
         $productname = $_POST["product_name"];
@@ -109,42 +143,34 @@
 
 
     <nav >
+
         <div class="logo_wrapper">
             <img src="..\assets\logo_processed.png" alt="AoLogo">
-
         </div>
 
 
         <div class="customer_acc_wrapper" onclick="redirect(this)">
             <h1>Accounts</h1>
-
         </div>
 
         <div class="product_wrapper" onclick="redirect(this)">
             <h1>Product</h1>
-
         </div>
 
         <div class="staffs_wrapper" onclick="redirect(this)">
             <h1>Staffs</h1>
-
         </div>
 
         <div class="transaction_wrapper" onclick="redirect(this)">
             <h1>Transactions</h1>
-
-
         </div>
 
         <div class="settings_wrapper" onclick="redirect(this)">
             <h1>Settings</h1>
-
         </div>
 
         <div class="signout_wrapper">
            <button>Sign Out</button>
-         
-
         </div>
 
     </nav>
@@ -195,17 +221,30 @@
 
                 <div class="submit_wrapper">
                 
-                    <input type="submit" value="Submit" name="submit" >
+                    <input type="submit" value="Add Product" name="submit" >
 
                 </div>
-               
-
-
             </form>
 
             <br>
 
-          
+            <div class="choice">
+            <select id="choices"  onchange="displayChoice(this)">
+                        <option value="choice1">Must Try</option>
+                        <option value="choice2">Starters</option>
+                        <option value="choice3">Japanese</option>
+                        <option value="choice4">Korean</option>
+                        <option value="choice5">Ramen</option>
+                        <option value="choice6">Chinese/Filipino</option>
+                        <option value="choice7">Rice</option>
+                        <option value="choice8">Soup</option>
+                        <option value="choice9">Desserts</option>
+                        <option value="choice10">Drinks</option>
+              </select>
+        </div>
+
+        <br>
+
             <?php
 
             // Read the contents of the JSON file
@@ -227,8 +266,6 @@
            
              //   echo "<script>console.log($decodeproductList)</script>";
                 foreach ($productList as $key) {
-               
-           
                     foreach ($key as $val ){
                         $y = json_encode($val);
                         $modifiedString = substr($y, 1, -1);
@@ -236,20 +273,10 @@
                         
                         //echo "<script>console.log($y)</script>";
                       }
-           
                    
                   }
             }
             
-
-        
-
-         
-
-
-         
-    
-
             if (isset($_POST['edit'])) {
                 // Declare global variables inside this block to use them
                 header('Location: product_admin_edit.php');
@@ -310,11 +337,10 @@
          
             for ($i=1; $i <=10 ; $i++) { 
              
-                echo "<table border='2' >
-                    <tr>
+                echo "<table border='2' class='choice_content'>
+                <tr>
                     <th colspan='7'>";
-                echo $product_json['choice' . $i];
-                        
+                      echo $product_json['choice' . $i];
                 echo"</th>
                 </tr>
                 <tr>
@@ -391,7 +417,7 @@
                             </td>
 
                             <td>
-                                <form  method='POST' class='button' action='product_admin_delete.php'>
+                                <form  method='POST' class='button'>
                                     <input type='hidden' name='TABLE_AVAILABILITY' value='$i'>
                                     <input type='hidden' name='ID_AVAILABILITY' value='$id'>
                                     <input type='hidden' name='NAME_AVAILABILITY' value='$name'>

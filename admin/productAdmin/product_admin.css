@@ -172,6 +172,10 @@ main{
     color: var(--nav-bg-color--);
 }
 
+.content_wrapper > :not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)):not(:nth-child(5)) {
+   display: none;
+}
+
 table{
     width: 100%;
     height: 30%;
@@ -181,19 +185,25 @@ table{
     border-collapse: collapse;
     border-color: black; 
     color: var(--nav-button-bgcolor--);
+    position: relative;
   
 
     
    
   
 }
+
+
 
 table tr th{
     background-color: var(--nav-bg-color--);
    
     color: var(--nav-button-bgcolor--);
+  
     
 }
+
+
 
 table tr:first-child th:first-child{
     background-color:var(--nav-button-bgcolor--);
