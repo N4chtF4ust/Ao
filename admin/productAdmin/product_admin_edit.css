@@ -97,6 +97,8 @@
 }
 
 
+
+
 .edit_wrapper form > div:last-child button,.edit_wrapper form > div:last-child input{
     background-color: var(--nav-button-bgcolor--);
     color: var(--nav-bg-color--);
@@ -107,9 +109,6 @@
     text-align: center;
     font-family: "Open Sans", sans-serif;
     font-weight: bolder;
-
-    
-      
 }
 
 

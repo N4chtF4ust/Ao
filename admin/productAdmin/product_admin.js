@@ -55,57 +55,49 @@ function dragElement(elmnt) {
   
 
 //    const thElement = element.querySelector('th');
-            
-
-     
-    
-   
 
     Array.from(choice_content).forEach(element => {
-      element.style.display="none";
+      element.style.left="100%";
+     
         
     });
-    
-       switch (choices.value) {
-           case "choice1":
-            choice_content[0].style.display = "block";
-          
-   
-   
-    
-               break;
-           case "choice2":
-            choice_content[1].style.display = "block";
-           
-            
 
-               break;
-           case "choice3":
-            choice_content[2].style.display = "block";
-               break;
-            case "choice4":
-                choice_content[3].style.display = "block";
-                break;
-            case "choice5":
-                choice_content[4].style.display = "block";
-                break;
-            case "choice6":
-                choice_content[5].style.display = "block";
-                break;
-            case "choice7":
-                choice_content[6].style.display = "block";
-                break;
-            case "choice8":
-                choice_content[7].style.display = "block";
-                break;
-            case "choice9":
-                choice_content[8].style.display = "block";
-                break;
-            case "choice10":
-                choice_content[9].style.display = "block";
-                break;
-          
-       }
+    switch (choices.value) {
+      case "choice1":
+       choice_content[0].style.left = "0";
+          break;
+      case "choice2":
+       choice_content[1].style.left = "0";
+
+          break;
+      case "choice3":
+       choice_content[2].style.left = "0";
+          break;
+       case "choice4":
+           choice_content[3].style.left = "0";
+           break;
+       case "choice5":
+           choice_content[4].style.left = "0";
+           break;
+       case "choice6":
+           choice_content[5].style.left = "0";
+           break;
+       case "choice7":
+           choice_content[6].style.left = "0";
+           break;
+       case "choice8":
+           choice_content[7].style.left = "0";
+           break;
+       case "choice9":
+           choice_content[8].style.left = "0";
+           break;
+       case "choice10":
+           choice_content[9].style.left = "0";
+           break;
+     
+  }
+    
+      
       
 }
 

@@ -244,6 +244,9 @@
         </div>
 
         <br>
+        <div class='table_wrapper'>
+
+   
 
             <?php
 
@@ -308,10 +311,7 @@
                           $PRICE,
                           $IMAGEURL,
                           $AVAILABILITY,
-                          $jsonFilePath_edit );
-
-             
-                
+                          $jsonFilePath_edit );  
             }
             
                 if(isset($_POST["delete"])){
@@ -332,11 +332,9 @@
                    
                    
                  }
-
-             
          
             for ($i=1; $i <=10 ; $i++) { 
-             
+                     
                 echo "<table border='2' class='choice_content'>
                 <tr>
                     <th colspan='7'>";
@@ -434,9 +432,12 @@
                 }
 
                echo  "</table> <br>";
+               
 
             }
             ?>
+
+              </div>
             <br>
         </div>
     </main>
