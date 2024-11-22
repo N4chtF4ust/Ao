@@ -95,7 +95,8 @@ main{
     display: flex;
     flex-direction: column;
     
-    overflow-y: scroll;
+ 
+    overflow-x: hidden;
 }
 
 .page_title{
@@ -186,6 +187,10 @@ main{
 
 }
 
+.table_wrapper > :first-child{
+    left: 0;   
+}
+
 .table_wrapper > :not(:first-child){
     left: 100%;   
 }
@@ -193,7 +198,7 @@ main{
 .table_wrapper > *{
     position: absolute;
     top: 0;
-    transition: .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 table{
@@ -254,6 +259,9 @@ table tr td{
   
     color: black;
     position: relative;
+    height: 20%;
+  
+
     
 }
 
@@ -306,6 +314,12 @@ table tr td form  button{
 
 table img{
     width: 50%;
+    max-width: 75px;
+    max-height: 75px;
+
+   
+ 
+
 }
 
 
@@ -364,8 +378,9 @@ table img{
 
     .button button{
         border-radius: 10px;
-        font-size: 70%;
-        height: 20%;
+        font-size: 50%;
+        
+        height: 50%;
     }
 }
 

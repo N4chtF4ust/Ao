@@ -1,7 +1,18 @@
 <?php
+    
+    
     include '..\assets\connect.php';
 
     include 'product_admin.php';
+
+   
+
+    $productList_edit = $_SESSION['productList'];
+
+    foreach ($productList_edit as $key => $value) {
+        echo "<script>console.log('" . $value. "');</script>";
+    }
+
 
     
 
@@ -13,7 +24,7 @@
    
    
    
-    $jsonFilePath = '../assets/edit_list.json';
+  /*  $jsonFilePath = '../assets/edit_list.json';
 
     $edit_list_array=[];
    
@@ -37,7 +48,7 @@
    
            
           }
-    }
+    }*/
     
    
 
@@ -64,7 +75,8 @@
     
             if(in_array($ext, $allowedTypes)){
                 if(move_uploaded_file($tempName, $targetPath)){
-                    $query = "UPDATE choice$edit_list_array[0] SET name = '$productname', price = '$productprice', img = '$fileName' WHERE id=$edit_list_array[1]"; 
+                    $query = "UPDATE choice" . $productList_edit['TABLE'] . " SET name = '$productname', price = '$productprice', img = '$fileName' WHERE id = " . $productList_edit['ID'];
+
                     $add_product = mysqli_query($conn,$query);
     
                     if(!$add_product){
@@ -94,10 +106,28 @@
 
 <link rel="stylesheet" href="product_admin_edit.css">
 
+
+
 <div class="edit_wrapper" id="draggable">
+
+
+
+<div class="img_wrapper">
+
+<h1><?php echo  $productList_edit['NAME'] ?></h1>
+  
+<img src="../assets/uploaded_img/<?php echo $productList_edit['IMAGEURL']; ?>" alt="sadsad">
+  
+</div>
+
+
+
 <form action="" method="post" enctype="multipart/form-data" id = "edit">
-    <h1><?php echo  $product_json['choice' . $edit_list_array[0]]; ?></h1>
-    <h2>Product ID: <?php echo  $edit_list_array[1] ?></h2>
+    <h1>Table: <?php echo $product_json['choice'.$productList_edit['TABLE']]; ?></h1>
+ 
+    <h2>Product ID: <?php echo  $productList_edit['ID'] ?></h2>
+    
+
 
   
 

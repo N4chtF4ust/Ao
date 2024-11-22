@@ -1,12 +1,22 @@
 <?php
+
+
+session_start();
+
+
+?>
+
+<?php
+
     include '..\assets\connect.php';
+   
  
 
     function jsoncrud($TABLE,$ID,$NAME,$PRICE,$IMAGEURL,$AVAILABILITY,$jsonFilePath){ 
         
         
         // This function use to insert a value in json file
-        if (file_exists($jsonFilePath)) {
+     /*   if (file_exists($jsonFilePath)) {
 
 
             // Read the existing JSON data
@@ -47,10 +57,30 @@
 
             
 
-    
-    
-  
-        }
+        }*/
+
+        $productList = [
+            'TABLE' => $TABLE,
+            'ID' => $ID,
+            'NAME' => $NAME,
+            'PRICE' => $PRICE,
+            'IMAGEURL' => $IMAGEURL,
+            'AVAILABILITY' => $AVAILABILITY
+        ];
+      
+           
+            foreach ($productList as $key => $value) {
+                echo "<script>console.log('" . $value. "');</script>";
+            }
+
+            $_SESSION['productList'] = $productList;  // Save content in session
+        
+
+     
+       
+        
+
+        
     }
 
     if ( $_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['availability'])) {
@@ -64,17 +94,6 @@
         $is_it_available = $_POST['availability_availability'];
         $jsonFilePath_availability = '../assets/availability.json';
 
-     
-
-        jsoncrud( $TABLE_AVAILABILITY,
-                  $ID_AVAILABILITY,
-                  $NAME_AVAILABILITY,
-                  $PRICE_AVAILABILITY,
-                  $IMAGEURL_AVAILABILITY,
-                  $is_it_available,
-                  $jsonFilePath_availability );      
-                  
-                  
         if($is_it_available === "Available"){
             $is_it_available_txt = "Sold Out";
             
@@ -121,6 +140,7 @@
             }
         }
     }
+
 
 ?>
 
@@ -229,9 +249,9 @@
             <br>
 
             <div class="choice">
-            <select id="choices"  onchange="displayChoice(this)">
-                        <option value="choice1">Must Try</option>
-                        <option value="choice2">Starters</option>
+            <select id="choices"  oninput="displayChoice(this)">
+                        <option value="choice1" >Must Try</option>
+                        <option value="choice2" >Starters</option>
                         <option value="choice3">Japanese</option>
                         <option value="choice4">Korean</option>
                         <option value="choice5">Ramen</option>
@@ -280,9 +300,10 @@
                   }
             }
             
-            if (isset($_POST['edit'])) {
+            if ( $_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit'])) {
+                
                 // Declare global variables inside this block to use them
-                header('Location: product_admin_edit.php');
+             
                
             
                 // Retrieve form data from POST request
@@ -296,11 +317,11 @@
             
               
                 // Now you can process the data, for example:
-                echo "<script>console.log('Table: $TABLE')</script>";
-                echo "<script>console.log('ID: $ID')</script>";
-                echo "<script>console.log('Name: $NAME')</script>";
-                echo "<script>console.log('Price: $PRICE')</script>";
-                echo "<script>console.log('Image URL: $IMAGEURL')</script>";
+              //  echo "<script>console.log('Table: $TABLE')</script>";
+              //  echo "<script>console.log('ID: $ID')</script>";
+              //  echo "<script>console.log('Name: $NAME')</script>";
+              //  echo "<script>console.log('Price: $PRICE')</script>";
+              //  echo "<script>console.log('Image URL: $IMAGEURL')</script>";
               
 
                 $jsonFilePath_edit = '../assets/edit_list.json';
@@ -312,6 +333,9 @@
                           $IMAGEURL,
                           $AVAILABILITY,
                           $jsonFilePath_edit );  
+                    // header("Location: product_admin_edit.php?");
+                          echo "<script>window.location.href='product_admin_edit.php'</script>";
+                       
             }
             
                 if(isset($_POST["delete"])){
@@ -393,7 +417,7 @@
                             <td id='product_img'><img src='$imageUrl' alt='AoLogo'></td>
 
                             <td>   
-                                <form id='editForm' method='POST' class='button'>
+                                <form id='editForm' method='POST' class='button' action=''>
                                     <input type='hidden' name='TABLE' value='$i'>
                                     <input type='hidden' name='ID' value='$id'>
                                     <input type='hidden' name='NAME' value='$name'>
@@ -402,7 +426,7 @@
                                     <input type='hidden' name='AVAILABILITY' value='$availability'>
                                    
                                    
-                                    <button type='submit' name='edit'> Edit </button>
+                                    <button type='submit' name='edit' > Edit </button>
 
                                 </form>
                             </td>
@@ -445,3 +469,9 @@
   
 </body>
 </html>
+
+<?php
+
+
+
+?>

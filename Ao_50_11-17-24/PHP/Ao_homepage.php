@@ -2,8 +2,23 @@
 
 <?php
 
-include("../PHP/Ao_connect.php");
+
 session_start();
+
+include("../PHP/Ao_connect.php");
+
+
+
+// Check if the user is logged in, otherwise redirect to login page
+if (!isset($_SESSION['username'])) {
+    header("Location: ../PHP/Ao_customer.php");
+    exit();
+}
+
+// Store the logged-in username
+$username = $_SESSION['username'];
+
+echo "<script>console.log('This the username: '+'$username')</script>";
 
 
 ?>
@@ -41,7 +56,7 @@ session_start();
         </div>
 
       <!-- <img src="..\CSS\product-asset\cart.svg" alt=""  id="cart" onclick="toggleCart(document.getElementById('cart_wrapper'))"> -->
-        <button>Back</button>
+        <button onclick="window.location.href='../PHP/Userpage_out.php'">Back</button>
     </nav>
 
     <div class="section-container">

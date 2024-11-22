@@ -52,6 +52,7 @@ function dragElement(elmnt) {
    
   
     const choice_content = document.querySelectorAll("table");
+    
   
 
 //    const thElement = element.querySelector('th');
@@ -100,6 +101,8 @@ function dragElement(elmnt) {
       
       
 }
+
+
 
  
 

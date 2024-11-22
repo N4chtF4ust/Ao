@@ -1,7 +1,17 @@
 <?php
 
+session_start();
+
+// Check if the user is already logged in, redirect to Ao homepage
+if (isset($_SESSION['username'])) {
+    header("Location: ../PHP/Ao_homepage.php");
+    exit();
+}
+
 
 include ("../PHP/Ao_connect.php");
+
+
 
 
 if(isset($_POST["login_user"])){
@@ -14,7 +24,9 @@ $adduser = "INSERT INTO customers( username, ticketNum) VALUES ('$username','$ra
  
 if(mysqli_query($conn, $adduser)){
 
-      header("location: ../PHP/Ao_homepage.php");
+        $_SESSION['username'] = $username;
+        header("Location: ../PHP/Ao_homepage.php");
+        exit();
 
   } 
 }
